@@ -17,7 +17,7 @@ On touch screens, swipe from the right edge towards to bring up the Charms bar. 
 * Includes accent colors!
 
 ## Screenshots
-<a style="color: red;">These are not yet finalized!</a>
+<b>These are not the final previews!</b> <br />
 <img src="resource/preview.png"/>
 
 ## Download
