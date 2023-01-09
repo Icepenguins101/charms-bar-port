@@ -26,6 +26,6 @@ On touch screens, swipe from the right edge towards to bring up the Charms bar. 
 ## Download
 Downloads are coming soon in the near future
 
-##Q&As
+## Q&As
 Q: When will this be released?<br />
 A: I personally don't know as I'm always busy with other things. If anyone wants to have their go at porting the animations and clock layouts then ask me, and I'll send a Google Drive link for you to improve upon.
