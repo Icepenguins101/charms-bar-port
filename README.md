@@ -9,7 +9,7 @@
 Forked and edited from <a href="https://github.com/Jerhynh/CharmsBarRevived">CharmsBarRevived</a>, <b>Charms Bar Port</b> will assist on helping you transition to Windows 10 and 11 without having to keep on the obsolete system forever.
 
 ## Why was this created?
-As you may know, ValiNet Charms is no longer available to download and an Archive.org repository appears to be infected, so I created this project primarily to bring my needs of a Charms Bar back.
+As you may know, ValiNet Charms is no longer available to download and an Archive.org repository containing a newer version appears to be in Russian and is infected, so I created this project primarily to bring my needs of a Charms Bar back.
 
 ## How does it work?
 On touch screens, swipe from the right edge towards to bring up the Charms bar. You can also use the keyboard shortcut Windows key + C, just like it was on Windows 8.x.
