@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "th2Mdi07iBghx/vxP98CyHJc/nnsh0sN4FGlTxIaEc3bieEYz+WsKaDeQP8ss6B0/L2vlZsPRDPyyRogA402jA==",
+  "success": true,
+  "projectFilePath": "D:\\Windows 8 Charms Bar for 10\\src\\CharmsBar\\CharmsBarPort.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kirby\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.17763.26\\microsoft.windows.sdk.net.ref.10.0.17763.26.nupkg.sha512"
+  ],
+  "logs": []
+}
