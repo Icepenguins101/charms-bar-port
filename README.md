@@ -21,7 +21,7 @@ On touch screens, swipe from the right edge towards to bring up the Charms bar. 
 
 ## Screenshots
 <!--<b>These are not the final previews!</b> <br />-->
-<img src="resource/charmsbarportpreview.png"/>
+<img src="resource/CharmsBarPortPreview.png"/>
 
 ## Download
 Downloads are coming soon in the near future
