@@ -3,6 +3,11 @@
 <img id="charmsbarPort" src="resource/darklogo.png"/>
 </p>
 
+<blockquote>
+Your most unhappy customers are your greatest source of learning.
+</blockquote>
+-Bill Gates
+
 ## About
 <b>Charms Bar Port</b> is the brand new solution for bringing back the Windows 8.x Charms bar to Windows 10 and Windows 11, using real files from Windows 8.x to meet your cravings and enhance your desktop.
 
