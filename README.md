@@ -23,9 +23,9 @@ On touch screens, swipe from the right edge towards to bring up the Charms bar. 
 * Based on Windows 8.1 Update 3
 * Includes accent colors
 * Can read your network/battery status
+* Supports Windows 8.x-era registry hacks (DisableTRCorner and DisableBRCorner)
 
 ## Screenshots
-<!--<b>These are not the final previews!</b> <br />-->
 <img src="resource/preview.png"/>
 
 ## Download
@@ -38,3 +38,18 @@ A: I personally don't know as I'm always busy with other things.
 <br />
 Q: Why is there no touch screen support?<br />
 A: I do not have access to a Windows tablet to add it.  If anyone wants to have their go at adding this in, then ask me, and I'll send a Google Drive link for you to improve upon.
+<br />
+<br />
+Q: How can I disable the Charms Bar hot corners without closing the program?<br />
+A: This requires fiddling with the registry. I am not responsible if you mess up your system.
+
+1. Press the “WIN+R” key combination to launch the Run dialog box, then type regedit and press enter. It’ll open the Registry Editor, and go to following key:
+<blockquote>
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell\
+</blockquote>
+<br />
+2. Under the ImmersiveShell key, create a new key called EdgeUI.
+<br />
+3. Now select the newly created key “EdgeUI” and in the right-side pane, create two new DWORDs named DisableTRCorner and DisableBRCorner and set their values to 1.
+<br />
+4. That’s it. It’ll immediately disable the Charms Bar hot corners. You do not need to log off or restart the system.
