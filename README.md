@@ -4,7 +4,7 @@
 </p>
 
 <blockquote>
-"Your most unhappy customers are your greatest source of learning." -Bill Gates
+"Your most unhappy customers are your greatest source of learning."<br />-Bill Gates
 </blockquote>
 
 ## About
@@ -22,8 +22,10 @@ On touch screens, swipe from the right edge towards to bring up the Charms bar. 
 * Powered by Visual Studio 2022
 * Based on Windows 8.1 Update 3
 * Includes accent colors
-* Can read your network/battery status
+* Network/battery status included
 * Supports Windows 8.x-era registry hacks (DisableTRCorner and DisableBRCorner)
+* High contrast support
+* Includes animation support
 
 ## Screenshots
 <img src="resource/preview.png"/>
@@ -37,12 +39,11 @@ A: I personally don't know as I'm always busy with other things.
 <br />
 <br />
 Q: Why is there no touch screen support?<br />
-A: I do not have access to a Windows tablet to add it.  If anyone wants to have their go at adding this in, then ask me, and I'll send a Google Drive link for you to improve upon.
+A: I do not have access to a Windows tablet to add it. If anyone wants to have their go at adding this in, then ask me, and I'll send a Google Drive link for you to improve upon.
 <br />
 <br />
 Q: How can I disable the Charms Bar hot corners without closing the program?<br />
 A: This requires fiddling with the registry. I am not responsible if you mess up your system.
-
 1. Press the “WIN+R” key combination to launch the Run dialog box, then type regedit and press enter. It’ll open the Registry Editor, and go to following key:
 <blockquote>
 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell\
@@ -53,3 +54,19 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell\
 3. Now select the newly created key “EdgeUI” and in the right-side pane, create two new DWORDs named DisableTRCorner and DisableBRCorner and set their values to 1.
 <br />
 4. That’s it. It’ll immediately disable the Charms Bar hot corners. You do not need to log off or restart the system.
+<br />
+<br />
+Q: Is this safe to use?
+A: Yes, it should be. Any antivirus programs complaining should be registered as a false positive.
+<br />
+<br />
+Q: Why are the animations stiff?
+A: I'm new to C#, so the animations may not match. Again, if anyone wants to have their go at improving this, then ask me, and I'll send a Google Drive link for you to improve upon.
+<br />
+<br />
+Q: I'm trying to ALT+F4 the program but it won't let me. Why?
+A: This is to fix a crashing issue. If you want to close the program use Task Manager instead.
+<br />
+<br />
+Q: I have found a bug. Can you fix it?
+A: Report the problem under <a href="https://github.com/Icepenguins101/charms-bar-port/issues">the issues category</a>.
