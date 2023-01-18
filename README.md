@@ -44,10 +44,8 @@ A: I do not have access to a Windows tablet to add it. If anyone wants to have t
 <br />
 Q: How can I disable the Charms Bar hot corners without closing the program?<br />
 A: This requires fiddling with the registry. I am not responsible if you mess up your system.
-1. Press the “WIN+R” key combination to launch the Run dialog box, then type regedit and press enter. It’ll open the Registry Editor, and go to following key:
-<blockquote>
-HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell\
-</blockquote>
+<br />
+1. Press the “WIN+R” key combination to launch the Run dialog box, then type regedit and press enter. It’ll open the Registry Editor, and go to following key: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell\
 <br />
 2. Under the ImmersiveShell key, create a new key called EdgeUI.
 <br />
@@ -56,17 +54,17 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell\
 4. That’s it. It’ll immediately disable the Charms Bar hot corners. You do not need to log off or restart the system.
 <br />
 <br />
-Q: Is this safe to use?
+Q: Is this safe to use?<br />
 A: Yes, it should be. Any antivirus programs complaining should be registered as a false positive.
 <br />
 <br />
-Q: Why are the animations stiff?
+Q: Why are the animations stiff?<br />
 A: I'm new to C#, so the animations may not match. Again, if anyone wants to have their go at improving this, then ask me, and I'll send a Google Drive link for you to improve upon.
 <br />
 <br />
-Q: I'm trying to ALT+F4 the program but it won't let me. Why?
+Q: I'm trying to ALT+F4 the program but it won't let me. Why?<br />
 A: This is to fix a crashing issue. If you want to close the program use Task Manager instead.
 <br />
 <br />
-Q: I have found a bug. Can you fix it?
+Q: I have found a bug. Can you fix it?<br />
 A: Report the problem under <a href="https://github.com/Icepenguins101/charms-bar-port/issues">the issues category</a>.
