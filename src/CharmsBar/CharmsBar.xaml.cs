@@ -877,7 +877,7 @@ namespace CharmsBarPort
                     var shareDas3 = new Thickness(textShare, 59, 12, 0);
                     ShareText.Margin = shareDas3;
 
-                    var winDas3 = new Thickness(textWin, -15, 12, 0);
+                    var winDas3 = new Thickness(textWin, -19, 12, 0);
                     WinText.Margin = winDas3;
 
                     var deviceDas3 = new Thickness(textDevices, 7, 12, 0);
@@ -1100,7 +1100,7 @@ namespace CharmsBarPort
                     var shareDas3 = new Thickness(0, 59, 12, 0);
                     ShareText.Margin = shareDas3;
 
-                    var winDas3 = new Thickness(0, -15, 12, 0);
+                    var winDas3 = new Thickness(0, -19, 12, 0);
                     WinText.Margin = winDas3;
 
                     var deviceDas3 = new Thickness(0, 7, 12, 0);
