@@ -1,0 +1,40 @@
+﻿<Window x:Class="CharmsBarPort.CharmsClock"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Opacity="1.002"
+        mc:Ignorable="d"
+        Title="Charms Bar Clock"
+        AllowsTransparency="True" Width="450" Height="140">
+    <Grid Focusable="False" Margin="0,0,-13,0">
+        <StackPanel Grid.Row="1">
+            
+            <Image Name="NoInternetFound" Source="Assets/Images/Icon112.png" HorizontalAlignment="Left" Width="25" Margin="37,3,0,-99" Visibility="Hidden"/>
+            <Image Name="HasInternet" Source="Assets/Images/Icon151.png" HorizontalAlignment="Left" Width="25" Margin="37,3,0,-99" Visibility="Hidden"/>
+            <Image Name="WeakInternet" Source="Assets/Images/Icon133.png" HorizontalAlignment="Left" Width="25" Margin="37,3,0,-99" Visibility="Hidden"/>
+            <Image Name="NoDrivers" Source="Assets/Images/Icon103.png" HorizontalAlignment="Left" Width="24" Margin="39,3,0,-99" Visibility="Visible"/>
+            <Image Name="Ethernet" Source="Assets/Images/Icon106.png" HorizontalAlignment="Left" Width="24" Margin="39,3,0,-99" Visibility="Hidden"/>
+            <Image Name="Airplane" Source="Assets/Images/Icon118.png" HorizontalAlignment="Left" Width="24" Margin="39,3,0,-99" Visibility="Hidden"/>
+            
+            <Image Name="BatteryLife" Source="Assets/Images/BatteryFull.png" HorizontalAlignment="Left" Width="24" Margin="39,9,0,-169" Visibility="Visible"/>
+            <Image Name="IsCharging" Source="Assets/Images/BatteryFullCharging.png" HorizontalAlignment="Left" Width="24" Margin="39,9,0,-169" Visibility="Hidden"/>
+            <Label Name="Clocks" Content="9                           00" Foreground="white" FontFamily="Segoe UI light" FontSize="85" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="94,3,0,-106"/>
+            <Label Name="Clocked" Content="27" Foreground="white" FontFamily="Segoe UI light" FontSize="85" Margin="157,-17,-190,-198"/>
+            <Label Name="ClockLines" Content=":" Foreground="white" FontFamily="Segoe UI Light" FontSize="84" Margin="138,-24.99,-190,-98"/>
+            <Label Name="Week" Content="Tuesday" Foreground="white" FontFamily="Segoe UI Semilight" FontSize="32" VerticalAlignment="Bottom" Margin="267,2,0,-18"/>
+
+            <Label Name="Date" Content="January 10" Foreground="white" FontFamily="Segoe UI Semilight" FontSize="32" VerticalAlignment="Bottom" Margin="267,4,0,-24"/>
+            
+        <Border Background="{x:Static SystemColors.MenuBrush}"
+        Name="ClockBorder"
+        Panel.ZIndex="-1"
+        BorderBrush="{x:Static SystemColors.WindowTextBrush}" 
+        BorderThickness="2"
+        Height="139"
+        Margin="-13,-89,0,0">
+            </Border>
+            
+        </StackPanel>
+    </Grid>
+</Window>
