@@ -12,6 +12,8 @@
 
 Forked and completely edited from <a href="https://github.com/Jerhynh/CharmsBarRevived">CharmsBarRevived</a>, <b>Charms Bar Port</b> will assist on helping you transition to Windows 10 and 11 without having to keep on the obsolete system forever.
 
+Are you a Charms Bar fan and tired of not having it in Windows 10/11? This is your solution... 
+
 ## Why was this created?
 As you may know, ValiNet Charms is no longer available to download and an Archive.org repository containing a newer version appears to be in Russian and is infected, so I created this project primarily to bring my needs of a Charms Bar back.
 
@@ -45,9 +47,8 @@ A: I do not have access to a Windows tablet to add it. If anyone wants to have t
 Q: How can I disable the Charms Bar hot corners without closing the program?<br />
 A: This requires fiddling with the registry. I am not responsible if you mess up your system.
 <br />
-1. Press the “WIN+R” key combination to launch the Run dialog box, then type regedit and press enter. It’ll open the Registry Editor, and go to following key: <blockquote>
+1. Press the “WIN+R” key combination to launch the Run dialog box, then type regedit and press enter. It’ll open the Registry Editor, and go to following key: 
 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell\
-</blockquote>
 2. Under the ImmersiveShell key, create a new key called EdgeUI.
 3. Now select the newly created key “EdgeUI” and in the right-side pane, create two new DWORDs named DisableTRCorner and DisableBRCorner and set their values to 1.
 4. That’s it. It’ll immediately disable the Charms Bar hot corners. You do not need to log off or restart the system.
