@@ -45,7 +45,7 @@ A: I do not have access to a Windows tablet to add it. If anyone wants to have t
 Q: How can I disable the Charms Bar hot corners without closing the program?<br />
 A: This requires fiddling with the registry. I am not responsible if you mess up your system.
 <br />
-1. Press the “WIN+R” key combination to launch the Run dialog box, then type regedit and press enter. It’ll open the Registry Editor, and go to following key: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell\
+1. Press the “WIN+R” key combination to launch the Run dialog box, then type regedit and press enter. It’ll open the Registry Editor, and go to following key: <blockquote>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell\</blockquote>
 2. Under the ImmersiveShell key, create a new key called EdgeUI.
 3. Now select the newly created key “EdgeUI” and in the right-side pane, create two new DWORDs named DisableTRCorner and DisableBRCorner and set their values to 1.
 4. That’s it. It’ll immediately disable the Charms Bar hot corners. You do not need to log off or restart the system.
