@@ -28,6 +28,7 @@ On touch screens, swipe from the right edge towards to bring up the Charms bar. 
 * Supports Windows 8.x-era registry hacks (DisableTRCorner and DisableBRCorner)
 * High contrast support
 * Includes animation support
+* Multi-monitor support (<b>Can only support up to 10 monitors!</b>)
 
 ## Screenshots
 <img src="resource/preview.png"/>
