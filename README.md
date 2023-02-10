@@ -68,6 +68,7 @@ A: I'm new to C#, so the animations may not match. Again, if anyone wants to hav
 <br />
 <br />
 Q: I'm trying to ALT+F4 the program but it won't let me. Why?<br />
+A: This was meant to fix a crash bug. Use Task Manager if you want to stop the program.
 <br />
 <br />
 Q: When I open the Start menu in Windows 10 the charms clock is not visible, why is that?<br />
