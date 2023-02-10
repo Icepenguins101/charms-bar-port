@@ -29,6 +29,7 @@ On touch screens, swipe from the right edge towards to bring up the Charms bar. 
 * High contrast support
 * Includes animation support
 * Multi-monitor support (<b>Can only support up to 10 monitors!</b>)
+* Touch-friendly
 
 ## Screenshots
 <img src="resource/preview.png"/>
@@ -67,7 +68,10 @@ A: I'm new to C#, so the animations may not match. Again, if anyone wants to hav
 <br />
 <br />
 Q: I'm trying to ALT+F4 the program but it won't let me. Why?<br />
-A: This is to fix a crashing issue. If you want to close the program use Task Manager instead.
+<br />
+<br />
+Q: When I open the Start menu in Windows 10 the charms clock is not visible, why is that?<br />
+A: This is an issue I cannot fix without embedding it into Explorer itself or signing a certificate.
 <br />
 <br />
 Q: I have found a bug. Can you fix it?<br />
