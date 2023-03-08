@@ -70,7 +70,7 @@ A: I'm new to C#, so the animations may not match.<!-- Again, if anyone wants to
 <br />
 <br />
 Q: How does multi-monitor support work?<br />
-A: If you have two or more monitors, moving your mouse to the next monitor(s) will increase the activeScreen parameter (activeMonitor = 0 is monitor 1, activeMonitor = 1 is monitor 2, vice versa), forcing the Charms Bar to be moved over to the next screen. If it's activated by mouse but not completely "spread-out", moving to the next monitor will force the Charms Bar to deactivate, to fix a bug that the original version had (if you activated it on monitor 1 and moved your cursor to monitor 2 it will stay on the screen)
+A: If you have two or more monitors, moving your mouse to the next monitor(s) will increase the activeScreen parameter (activeScreen = 0 is monitor 1, activeScreen = 1 is monitor 2, vice versa), forcing the Charms Bar to be moved over to the next screen. If it's activated by mouse but not completely "spread-out", moving to the next monitor will force the Charms Bar to deactivate, to fix a bug that the original version had (if you activated it on monitor 1 and moved your cursor to monitor 2 it will stay on the screen).
 <br />
 <br />
 Q: I'm trying to ALT+F4 the program but it won't let me. Why?<br />
