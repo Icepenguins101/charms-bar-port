@@ -5,98 +5,100 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="Charms Bar"
-        Width="98"
-        AllowsTransparency="True">
+        Top="0"
+        Width="86"
+        Topmost="True"
+        ShowInTaskbar="False"
+        ResizeMode="NoResize">
 
-    <Grid Name="CharmsId" Background="#00111111" UIElement.MouseUp="Charms_MouseUp" UIElement.MouseDown="Charms_MouseDown" UIElement.MouseMove="Charms_MouseMove" UIElement.MouseLeave="Charms_MouseLeave" UIElement.MouseEnter="Charms_MouseEnter" ShowGridLines="False">
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition></ColumnDefinition>
-		</Grid.ColumnDefinitions>
+    <Grid Width="98" Height="Auto" Name="CharmsId" Background="#00111111" UIElement.MouseUp="Charms_MouseUp" UIElement.MouseDown="Charms_MouseDown" UIElement.MouseMove="Charms_MouseMove" UIElement.MouseLeave="Charms_MouseLeave" UIElement.MouseEnter="Charms_MouseEnter" ShowGridLines="False" Grid.ZIndex="999999922">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="75"></RowDefinition>
+            <RowDefinition Height="75"></RowDefinition>
+            <RowDefinition Height="75"></RowDefinition>
+            <RowDefinition Height="75"></RowDefinition>
+            <RowDefinition Height="75"></RowDefinition>
+            <RowDefinition Height="75"></RowDefinition>
+            <RowDefinition Height="75"></RowDefinition>
+            <RowDefinition Height="75"></RowDefinition>
+            <RowDefinition Height="75"></RowDefinition>
+            <RowDefinition Height="75"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <StackPanel Name="CharmBorder" Grid.Row="0" Background="{x:Static SystemColors.WindowTextBrush}" Margin="-96,0,0,-999911" Width="2" Visibility="Visible" Panel.ZIndex="1">
+        <StackPanel Name="CharmBorder" Background="{x:Static SystemColors.WindowTextBrush}" Margin="-96,0,0,-999911" Width="2" Visibility="Visible" Panel.ZIndex="1">
 
         </StackPanel>
 
-        <StackPanel Name="CharmBG" Grid.Row="0" Background="#111111" Margin="0,0,0,-999911" Opacity="0.002" Visibility="Hidden" Panel.ZIndex="-2">
-            
-        </StackPanel>
-
-        <StackPanel Name="SearchHover" Grid.Row="3" Background="#333333" Visibility="Hidden">
+        <StackPanel Name="CharmBG" Background="#111111" Margin="0,0,0,-999911" Opacity="0.001" Visibility="Hidden" Panel.ZIndex="-2">
 
         </StackPanel>
 
-        <StackPanel Name="ShareHover" Grid.Row="4" Background="#333333" Visibility="Hidden">
+        <StackPanel Width="100" Height="100" Name="SearchHover" Grid.Row="3" Background="#333333" Visibility="Hidden">
 
         </StackPanel>
 
-        <StackPanel Name="WinHover" Grid.Row="5" Background="#333333" Visibility="Hidden">
+        <StackPanel Width="100" Height="100" Name="ShareHover" Grid.Row="4" Background="#333333" Visibility="Hidden">
 
         </StackPanel>
 
-        <StackPanel Name="DevicesHover" Grid.Row="6" Background="#333333" Visibility="Hidden">
-
-        </StackPanel>
-        
-        <StackPanel Name="SettingsHover" Grid.Row="7" Background="#333333" Visibility="Hidden">
+        <StackPanel Width="100" Height="100" Name="WinHover" Grid.Row="5" Background="#333333" Visibility="Hidden">
 
         </StackPanel>
 
-        <StackPanel Name="SearchDown" Grid.Row="3" Background="#444444" Margin="0,-25,0,0" Visibility="Hidden">
+        <StackPanel Width="100" Height="100" Name="DevicesHover" Grid.Row="6" Background="#333333" Visibility="Hidden">
 
         </StackPanel>
 
-        <StackPanel Name="ShareDown" Grid.Row="4" Background="#444444" Margin="0,0,0,-25" Visibility="Hidden">
+        <StackPanel Width="100" Height="100" Name="SettingsHover" Grid.Row="7" Background="#333333" Visibility="Hidden">
 
         </StackPanel>
 
-        <StackPanel Name="WinDown" Grid.Row="5" Background="#444444" Margin="0,25,0,-50" Visibility="Hidden">
+        <StackPanel Height="100" Name="SearchDown" Grid.Row="3" Background="#444444" Margin="0,-25,0,0" Visibility="Hidden">
 
         </StackPanel>
 
-        <StackPanel Name="DevicesDown" Grid.Row="6" Background="#444444" Margin="0,50,0,-75" Visibility="Hidden">
+        <StackPanel Width="100" Height="100" Name="ShareDown" Grid.Row="4" Background="#444444" Margin="0,0,0,-25" Visibility="Hidden">
 
         </StackPanel>
 
-        <StackPanel Name="SettingsDown" Grid.Row="7" Background="#444444" Margin="0,75,0,-100" Visibility="Hidden">
+        <StackPanel Width="100" Height="100" Name="WinDown" Grid.Row="5" Background="#444444" Margin="0,25,0,-50" Visibility="Hidden">
 
         </StackPanel>
 
-        <StackPanel Name="SearchBG" Background="#00ffffff" UIElement.MouseLeave="Search_MouseLeave" UIElement.MouseEnter="Search_MouseEnter" UIElement.PreviewMouseLeftButtonUp="Search_MouseUp" UIElement.PreviewMouseLeftButtonDown="Search_MouseDown" Grid.Row="3">
+        <StackPanel Width="100" Height="100" Name="DevicesDown" Grid.Row="6" Background="#444444" Margin="0,50,0,-75" Visibility="Hidden">
+
+        </StackPanel>
+
+        <StackPanel Width="100" Height="100" Name="SettingsDown" Grid.Row="7" Background="#444444" Margin="0,75,0,-100" Visibility="Hidden">
+
+        </StackPanel>
+
+        <StackPanel Name="SearchBG" Background="#00ffffff" UIElement.MouseLeave="Search_MouseLeave" UIElement.MouseEnter="Search_MouseEnter" UIElement.PreviewMouseLeftButtonUp="Search_MouseUp" UIElement.PreviewMouseLeftButtonDown="Search_MouseDown" Grid.Row="3" Width="98">
             <Image Name="SearchCharm" Source="/Assets/Images/Search.png" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48" Width="51" Margin="0,-11,12,-66" Visibility="Hidden"/>
             <Image Name="SearchCharmInactive" Source="/Assets/Images/SearchInactive.png" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48.3" Width="51" Margin="0,-11,12,-66"  Visibility="Hidden"/>
             <Label Name="SearchText" Content="Search" Foreground="#A0A0A0" FontFamily="Segoe UI Emoji" FontSize="15.04" HorizontalAlignment="Stretch" VerticalAlignment="Center" Padding="19.90,1,0,1" Margin="1,38,13.141,-44.89" Visibility="Hidden"/>
 		</StackPanel>
 
-        <StackPanel Name="ShareBG" Background="#00ffffff" UIElement.MouseLeave="Share_MouseLeave" UIElement.MouseEnter="Share_MouseEnter" UIElement.PreviewMouseLeftButtonUp="Share_MouseUp" UIElement.PreviewMouseLeftButtonDown="Share_MouseDown" Margin="0,0,0,-25" Grid.Row="4">
+        <StackPanel Name="ShareBG" Height="100" Background="#00ffffff" UIElement.MouseLeave="Share_MouseLeave" UIElement.MouseEnter="Share_MouseEnter" UIElement.PreviewMouseLeftButtonUp="Share_MouseUp" UIElement.PreviewMouseLeftButtonDown="Share_MouseDown" Margin="0,0,0,-25" Grid.Row="4" Width="98">
             <Image Name="ShareCharm" Source="/Assets/Images/Share.png" HorizontalAlignment="Center" VerticalAlignment="Top" Height="47.8" Width="47.8" Margin="0,14,12,-96" Visibility="Hidden"/>
             <Image Name="ShareCharmInactive" Source="/Assets/Images/ShareInactive.png" HorizontalAlignment="Center" VerticalAlignment="Top" Height="47.8" Width="47.8" Margin="0,14,12,-66" Visibility="Hidden"/>
             <Label Name="ShareText" Content="Share" Foreground="#A0A0A0" FontFamily="Segoe UI Emoji" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,59,12,0" Visibility="Hidden"/>
         </StackPanel>
 
-        <StackPanel Name="WinBG" Background="#00ffffff" UIElement.MouseLeave="Win_MouseLeave" UIElement.MouseEnter="Win_MouseEnter" UIElement.PreviewMouseLeftButtonUp="Win_MouseUp" UIElement.PreviewMouseLeftButtonDown="Win_MouseDown" Margin="0,-49,0,24" Grid.Row="6">
+        <StackPanel Name="WinBG" Height="100" Background="#00ffffff" UIElement.MouseLeave="Win_MouseLeave" UIElement.MouseEnter="Win_MouseEnter" UIElement.PreviewMouseLeftButtonUp="Win_MouseUp" UIElement.PreviewMouseLeftButtonDown="Win_MouseDown" Margin="0,-49,0,24" Grid.Row="6" Width="98">
             <Grid Name="MetroColor" Background="{x:Static SystemParameters.WindowGlassBrush}" VerticalAlignment="Top" Width="70" Height="54" Margin="0,11,12,4" Opacity="0.0" Visibility="Hidden">
-                <Image Name="WinFader" Source="/Assets/Images/fader.png" VerticalAlignment="Center" Height="139" Width="137" Margin="0,0,0,0" Visibility="Visible"/>
+                <Image Name="WinFader" Source="/Assets/Images/fader.png" VerticalAlignment="Center" Height="139" Width="287" Margin="0,0,0,0" Visibility="Visible"/>
                 <StackPanel Name="FadeBlocker" Background="#111111" Margin="-80,0,0,0" Width="10" Opacity="0.0" Grid.Row="6">
                 </StackPanel>
                 <Image Name="WinCharm" Source="/Assets/Images/Windows8.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="82" Width="80.31" Opacity="0.0" Margin="0,0,0,0" Visibility="Visible"/>
                 <Image Name="WinCharmHover" Source="/Assets/Images/Windows8Hover.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="82" Width="80.31" Margin="0,0,0,0" Visibility="Hidden"/>
                 <Image Name="WinCharmDown" Source="/Assets/Images/Windows8Down.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Height="82" Width="80.31" Margin="0,0,0,0" Visibility="Hidden"/>
-
             </Grid>
 
             <Grid Name="NoColor" Background="#00000000" VerticalAlignment="Top" Width="50" Height="50" Margin="0,-50,12,4" Visibility="Visible">
@@ -109,13 +111,13 @@
             <Label Name="WinText" Content="Start" Foreground="#A0A0A0" FontFamily="Segoe UI Emoji" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,-19,12,0" Visibility="Hidden"/>
         </StackPanel>
 
-        <StackPanel Name="DevicesBG" Background="#00ffffff" UIElement.MouseLeave="Devices_MouseLeave" UIElement.MouseEnter="Devices_MouseEnter" UIElement.PreviewMouseLeftButtonUp="Devices_MouseUp" UIElement.PreviewMouseLeftButtonDown="Devices_MouseDown" Margin="0,-24,0,0" Grid.Row="7">
+        <StackPanel Name="DevicesBG" Height="100" Background="#00ffffff" UIElement.MouseLeave="Devices_MouseLeave" UIElement.MouseEnter="Devices_MouseEnter" UIElement.PreviewMouseLeftButtonUp="Devices_MouseUp" UIElement.PreviewMouseLeftButtonDown="Devices_MouseDown" Margin="0,-24,0,0" Grid.Row="7" Width="98">
             <Image Name="DevicesCharm" Source="/Assets/Images/Devices.png" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48" Width="48" Margin="0,13,12,-10" Visibility="Hidden"/>
             <Image Name="DevicesCharmInactive" Source="/Assets/Images/DevicesInactive.png" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48" Width="48" Margin="0,-38,12,-99" Visibility="Hidden"/>
             <Label Name="DevicesText" Content="Devices" Foreground="#A0A0A0" FontFamily="Segoe UI Emoji" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,7,12,0" Visibility="Hidden"/>
 		</StackPanel>
 
-        <StackPanel Name="SettingsBG" Background="#00ffffff" UIElement.MouseLeave="Settings_MouseLeave" UIElement.MouseEnter="Settings_MouseEnter" UIElement.PreviewMouseLeftButtonUp="Settings_MouseUp" UIElement.PreviewMouseLeftButtonDown="Settings_MouseDown" Grid.Row="8">
+        <StackPanel Name="SettingsBG" Background="#00ffffff" UIElement.MouseLeave="Settings_MouseLeave" UIElement.MouseEnter="Settings_MouseEnter" UIElement.PreviewMouseLeftButtonUp="Settings_MouseUp" UIElement.PreviewMouseLeftButtonDown="Settings_MouseDown" Grid.Row="8" Width="98">
             <Image Name="SettingsCharm" Source="/Assets/Images/Settings.png" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48" Width="48" Margin="0,14,12,-99" Visibility="Hidden"/>
             <Image Name="SettingsCharmInactive" Source="/Assets/Images/SettingsInactive.png" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48" Width="48" Margin="0,14,12,-99" Visibility="Hidden"/>
             <Label Name="SettingsText" Content="Settings" Foreground="#A0A0A0" FontFamily="Segoe UI Emoji" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,59,12,-63" Visibility="Hidden"/>

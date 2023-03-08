@@ -62,7 +62,7 @@ namespace CharmsBarPort
         private void _initTimer()
         {
             System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
-            t.Interval = 10;
+            t.Interval = 1;
             t.Tick += OnTimedEvent;
             t.Enabled = true;
             t.Start();
@@ -72,6 +72,14 @@ namespace CharmsBarPort
         {
             dispatcher.BeginInvoke((Action)(() =>
             {
+                Date.Content = DateTime.Today.ToString("MMMM d");
+                Week.Content = DateTime.Today.ToString("dddd");
+                Clocks.Content = DateTime.Now.ToString("h                           mm");
+                Clocked.Content = DateTime.Now.ToString("mm");
+
+                var dispWidth = SystemParameters.PrimaryScreenWidth;
+                var dispHeight = SystemParameters.PrimaryScreenHeight;
+
                 if (SystemParameters.HighContrast == false)
                 {
                     ClockBorder.Visibility = Visibility.Hidden;
@@ -92,7 +100,7 @@ namespace CharmsBarPort
                     Date.Foreground = SystemColors.WindowTextBrush;
                     Clocked.Foreground = SystemColors.WindowTextBrush;
                 }
-                this.Left = 51;
+
                 CheckBatteryStatus();
                 var localKey = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
                 var localKey2 = localKey.OpenSubKey("SYSTEM\\ControlSet001\\Control\\RadioManagement\\SystemRadioState");
@@ -161,10 +169,7 @@ namespace CharmsBarPort
                     Airplane.Visibility = Visibility.Visible;
                 }
 
-                Date.Content = DateTime.Today.ToString("MMMM d");
-                Week.Content = DateTime.Today.ToString("dddd");
-                Clocks.Content = DateTime.Now.ToString("h                           mm");
-                if (Clocks.Content.ToString().Length < 30 || Clocks.Content.ToString().Length == 30)
+                if (Clocks.Content.ToString().Length < 30 && Clocks.Content.ToString().StartsWith("1 ") == false && Clocks.Content.ToString().StartsWith("10") == false && Clocks.Content.ToString().StartsWith("12") == false || Clocks.Content.ToString().Length == 30 && Clocks.Content.ToString().StartsWith("1 ") == false && Clocks.Content.ToString().StartsWith("10") == false && Clocks.Content.ToString().StartsWith("12") == false)
                 {
                     Clocks.Margin = new Thickness(94, 3, 0, -106);
                     ClockLines.Margin = new Thickness(138, -24.99, -190, -98);
@@ -173,7 +178,36 @@ namespace CharmsBarPort
                     Date.Margin = new Thickness(267, 4, 0, -24);
                 }
 
-                if (Clocks.Content.ToString().Length == 31)
+                if (Clocks.Content.ToString().Length < 30 && Clocks.Content.ToString().StartsWith("1 ") == true || Clocks.Content.ToString().Length == 30 && Clocks.Content.ToString().StartsWith("1 ") == true)
+                {
+                    Clocks.Margin = new Thickness(95, 3, 0, -106);
+                    ClockLines.Margin = new Thickness(125, -24.99, -190, -98);
+                    Clocked.Margin = new Thickness(144, -17, -190, -198);
+                    Week.Margin = new Thickness(255, 2, 0, -18);
+                    Date.Margin = new Thickness(255, 4, 0, -24);
+                }
+
+                if (Clocks.Content.ToString().Length == 31 && Clocks.Content.ToString().StartsWith("10") == true || Clocks.Content.ToString().Length == 30 && Clocks.Content.ToString().StartsWith("10") == true)
+                {
+                    Clocks.Margin = new Thickness(95, 3, 0, -106);
+                    ClockLines.Margin = new Thickness(169, -24.99, -190, -98);
+                    Clocked.Margin = new Thickness(188, -17, -190, -198);
+                    Week.Margin = new Thickness(298, 2, 0, -18);
+                    Date.Margin = new Thickness(300, 4, 0, -24);
+                    this.Width = 450 + Date.Content.ToString().Length + 30;
+                }
+
+                if (Clocks.Content.ToString().Length == 31 && Clocks.Content.ToString().StartsWith("12") == true || Clocks.Content.ToString().Length == 30 && Clocks.Content.ToString().StartsWith("12") == true)
+                {
+                    Clocks.Margin = new Thickness(95, 3, 0, -106);
+                    ClockLines.Margin = new Thickness(169, -24.99, -190, -98);
+                    Clocked.Margin = new Thickness(188, -17, -190, -198);
+                    Week.Margin = new Thickness(298, 2, 0, -18);
+                    Date.Margin = new Thickness(300, 4, 0, -24);
+                    this.Width = 450 + Date.Content.ToString().Length + 30;
+                }
+
+                if (Clocks.Content.ToString().Length == 31 && Clocks.Content.ToString().StartsWith("10") == false && Clocks.Content.ToString().StartsWith("12") == false)
                 {
                     Clocks.Margin = new Thickness(94, 3, 0, -106);
                     ClockLines.Margin = new Thickness(157, -24.99, -190, -98);
@@ -181,7 +215,6 @@ namespace CharmsBarPort
                     Week.Margin = new Thickness(287, 2, 0, -18);
                     Date.Margin = new Thickness(287, 4, 0, -24);
                 }
-                Clocked.Content = DateTime.Now.ToString("mm");
 
                 if (Date.Content.ToString().Length > 11)
                 {
@@ -190,7 +223,7 @@ namespace CharmsBarPort
                         this.Width = 450 + Date.Content.ToString().Length + 36;
                     }
 
-                    if (Clocks.Content.ToString().Length == 31)
+                    if (Clocks.Content.ToString().Length == 31 && Clocks.Content.ToString().StartsWith("10") == false && Clocks.Content.ToString().StartsWith("12") == false)
                     {
                         this.Width = 450 + Date.Content.ToString().Length + 46;
                     }
@@ -203,7 +236,7 @@ namespace CharmsBarPort
                         this.Width = 450 + Date.Content.ToString().Length;
                     }
 
-                    if (Clocks.Content.ToString().Length == 31)
+                    if (Clocks.Content.ToString().Length == 31 && Clocks.Content.ToString().StartsWith("10") == false && Clocks.Content.ToString().StartsWith("12") == false)
                     {
                         this.Width = 450 + Date.Content.ToString().Length + 26;
                     }

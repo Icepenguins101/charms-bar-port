@@ -4,10 +4,12 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net7.0-windows10.0.17763.0</TargetFramework>
     <UseWPF>true</UseWPF>
-    <ApplicationIcon>Assets\Images\Icon1.ico</ApplicationIcon>
     <Title>Charms Bar Port</Title>
 	  <Company>Jayden Montoya</Company>
 	  <UseWindowsForms>True</UseWindowsForms>
+	  <ErrorReport>none</ErrorReport>
+	  <ApplicationIcon>Assets\Images\Icon1.ico</ApplicationIcon>
+	  <ApplicationManifest>D:\Windows 8 Charms Bar for 10\src\app.manifest</ApplicationManifest>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -162,10 +164,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
 
@@ -173,6 +171,10 @@
     <None Update="Assets\Images\Icon136.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
 
 </Project>

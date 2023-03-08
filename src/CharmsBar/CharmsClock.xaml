@@ -6,7 +6,10 @@
         Opacity="1.002"
         mc:Ignorable="d"
         Title="Charms Bar Clock"
-        AllowsTransparency="True" Width="450" Height="140">
+        AllowsTransparency="True"
+        Topmost="True"
+        Width="450"
+        Height="140">
     <Grid Focusable="False" Margin="0,0,-13,0">
         <StackPanel Grid.Row="1">
             
@@ -19,12 +22,12 @@
             
             <Image Name="BatteryLife" Source="Assets/Images/BatteryFull.png" HorizontalAlignment="Left" Width="24" Margin="39,9,0,-169" Visibility="Visible"/>
             <Image Name="IsCharging" Source="Assets/Images/BatteryFullCharging.png" HorizontalAlignment="Left" Width="24" Margin="39,9,0,-169" Visibility="Hidden"/>
-            <Label Name="Clocks" Content="9                           00" Foreground="white" FontFamily="Segoe UI light" FontSize="85" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="94,3,0,-106"/>
-            <Label Name="Clocked" Content="27" Foreground="white" FontFamily="Segoe UI light" FontSize="85" Margin="157,-17,-190,-198"/>
-            <Label Name="ClockLines" Content=":" Foreground="white" FontFamily="Segoe UI Light" FontSize="84" Margin="138,-24.99,-190,-98"/>
-            <Label Name="Week" Content="Tuesday" Foreground="white" FontFamily="Segoe UI Semilight" FontSize="32" VerticalAlignment="Bottom" Margin="267,2,0,-18"/>
+            <Label Name="Clocks" Content="10                           00" Foreground="white" FontFamily="Segoe UI light" FontSize="85" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="95,3,0,-106"/>
+            <Label Name="Clocked" Content="04" Foreground="white" FontFamily="Segoe UI light" FontSize="85" Margin="188,-17,-190,-198"/>
+            <Label Name="ClockLines" Content=":" Foreground="white" FontFamily="Segoe UI Light" FontSize="84" Margin="169,-24.99,-190,-98"/>
+            <Label Name="Week" Content="Tuesday" Foreground="white" FontFamily="Segoe UI Semilight" FontSize="32" VerticalAlignment="Bottom" Margin="298,2,0,-18"/>
 
-            <Label Name="Date" Content="January 10" Foreground="white" FontFamily="Segoe UI Semilight" FontSize="32" VerticalAlignment="Bottom" Margin="267,4,0,-24"/>
+            <Label Name="Date" Content="January 10" Foreground="white" FontFamily="Segoe UI Semilight" FontSize="32" VerticalAlignment="Bottom" Margin="300,4,0,-24"/>
             
         <Border Background="{x:Static SystemColors.MenuBrush}"
         Name="ClockBorder"
