@@ -78,3 +78,6 @@ A: This is an issue I cannot fix without embedding it into Explorer itself or si
 <br />
 Q: I have found a bug. Can you fix it?<br />
 A: Report the problem under <a href="https://github.com/Icepenguins101/charms-bar-port/issues">the issues category</a>.
+
+##Help Wanted !!
+As I'm currently undergoing a lot of stuff on VirtualBox, a browser game, SmileBASIC 4, Twitter lawsuits, dealing with some YouTube troll (YumaSonic2016) and many other things, Charms Bar Port needs more contributors that can replicate the touch controls of Windows 8.1 on C# since Spacedesk decided to stop working for me.
