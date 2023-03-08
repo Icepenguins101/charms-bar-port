@@ -1,4 +1,3 @@
-
 <p align="center">
 <img id="charmsbarPort" src="resource/darklogo.png"/>
 </p>
@@ -15,7 +14,9 @@ Forked and completely edited from <a href="https://github.com/Jerhynh/CharmsBarR
 Are you a Charms Bar fan and tired of not having it in Windows 10/11? This is your solution... 
 
 ## Why was this created?
-As you may know, ValiNet Charms is no longer available to download and an Archive.org repository containing a newer version appears to be in Russian and is infected, so I created this project primarily to bring my needs of a Charms Bar back.
+As you may know, Windows 10 does not have a Charms Bar. There used to be vague ways to restore it in the old days using ValiiNet Charms, PopCharms, RocketDock, etc.
+<br />
+ValiNet Charms as of 2023 is no longer available to download, PopCharms was only meant to be used in earlier builds of Windows 10 1507 and RocketDock is very outdated, so I created this project primarily to bring my needs of a Charms Bar back.
 
 ## How does it work?
 On touch screens, swipe from the right edge towards to bring up the Charms bar. If you're a mouse user, swipe to the top right corner and drag your cursor down to open the Charms bar. You can also use the keyboard shortcut Windows key + C, just like it was on Windows 8.x.
@@ -43,7 +44,7 @@ A: I personally don't know as I'm always busy with other things.
 <br />
 <br />
 Q: Why is there no touch screen support?<br />
-A: I do not have access to a Windows tablet to add it. If anyone wants to have their go at adding this in, then ask me, and I'll send a Google Drive link for you to improve upon.
+A: I do not have access to a Windows tablet to add it.<!-- If anyone wants to have their go at adding this in, then ask me, and I'll send a Google Drive link for you to improve upon.-->
 <br />
 <br />
 Q: How can I disable the Charms Bar hot corners without closing the program?<br />
@@ -64,7 +65,7 @@ A: Yes, it should be. Any antivirus programs complaining should be registered as
 <br />
 <br />
 Q: Why are the animations stiff?<br />
-A: I'm new to C#, so the animations may not match. Again, if anyone wants to have their go at improving this, then ask me, and I'll send a Google Drive link for you to improve upon.
+A: I'm new to C#, so the animations may not match.<!-- Again, if anyone wants to have their go at improving this, then ask me, and I'll send a Google Drive link for you to improve upon.-->
 <br />
 <br />
 Q: I'm trying to ALT+F4 the program but it won't let me. Why?<br />
