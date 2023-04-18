@@ -14,10 +14,10 @@ Forked and completely edited from <a href="https://github.com/Jerhynh/CharmsBarR
 Are you a Charms Bar fan and tired of not having it in Windows 10/11? This is your solution... 
 
 ## Why was this created?
-As you may know, Windows 10 was released to completely remove the Charms Bar. There used to be vague ways to restore it in the old days using ValiiNet Charms, PopCharms, RocketDock, etc.
+As you may know, Windows 10 completely removed the Charms Bar upon release. There used to be vague ways to restore it in the old days using ValiiNet Charms, PopCharms, RocketDock, etc.
 
 
-ValiNet Charms as of 2023 is no longer available to download, PopCharms was only meant to be used in earlier builds of Windows 10 1507 and RocketDock is <b>very</b> outdated, so I created this project primarily to bring my needs of a Charms Bar back.
+ValiNet Charms as of 2023 is no longer available to download, PopCharms was only meant to be used between Windows 10 build 9780 and Windows 10 build 9926, and RocketDock is <b>very</b> outdated, so I created this project primarily to bring my needs of a Charms Bar back.
 
 ## How does it work?
 On touch screens, swipe from the right edge towards to bring up the Charms bar. If you're a mouse user, swipe to the top right corner and drag your cursor down to open the Charms bar. You can also use the keyboard shortcut Windows key + C, just like it was on Windows 8.x.
@@ -27,11 +27,12 @@ On touch screens, swipe from the right edge towards to bring up the Charms bar. 
 * Based on Windows 8.1 Update 3
 * Includes accent colors
 * Network/battery status included
-* Supports Windows 8.x-era registry hacks (DisableTRCorner and DisableBRCorner)
+* Supports Windows 8.x-era registry hacks
 * High contrast support
 * Includes animation support
-* Multi-monitor support (<b>Can only support up to 10 monitors!</b>)
+* Multi-monitor support <!--(<b>Can only support up to 10 monitors!</b>)-->
 * Touch-friendly
+* Uses WinRT resources
 
 ## Screenshots
 <img src="resource/preview.png"/>
@@ -44,8 +45,8 @@ Q: When will this be released?<br />
 A: I personally don't know as I'm always busy with other things.
 <br />
 <br />
-Q: Why is there no touch screen support?<br />
-A: I do not have access to a Windows tablet to add it.<!-- If anyone wants to have their go at adding this in, then ask me, and I'll send a Google Drive link for you to improve upon.-->
+Q: I'm using a touch screen, why does the Action Center always open with the charms bar?<br />
+A: This is because the action center uses the same gesture. Disable it first to start using the charms bar on your tablet/touch-enabled PC.
 <br />
 <br />
 Q: How can I disable the Charms Bar hot corners without closing the program?<br />
@@ -66,7 +67,11 @@ A: Yes, it should be. Any antivirus programs complaining should be registered as
 <br />
 <br />
 Q: Why are the animations stiff?<br />
-A: I'm new to C#, so the animations may not match.<!-- Again, if anyone wants to have their go at improving this, then ask me, and I'll send a Google Drive link for you to improve upon.-->
+A: I'm new to C#, so the animations may not match.
+<br />
+<br />
+Q: Why does this program not support Windows 7 and Windows 8.1?<br />
+A: For Windows 7 users, Charms Bar Port is meant to be used on Windows 10 and Windows 11. If you want a Charms Bar for Windows 7 look elsewhere. And for Windows 8.1 users, the Charms Bar is already on your system. There's no need to create another one.
 <br />
 <br />
 Q: How does multi-monitor support work?<br />
