@@ -6,6 +6,12 @@
 "Your most unhappy customers are your greatest source of learning."<br />-Bill Gates
 </blockquote>
 
+[![GitHub release](https://img.shields.io/github/release/Icepenguins101/charms-bar-port/all.svg)](https://github.com/Icepenguins101/charms-bar-port/releases)
+[![Github all releases](https://img.shields.io/github/downloads/Icepenguins101/charms-bar-port/total.svg)](https://github.com/Icepenguins101/charms-bar-port/releases)
+[![GitHub stars](https://img.shields.io/github/stars/Icepenguins101/charms-bar-port.svg)](https://github.com/Icepenguins101/charms-bar-port/stargazers)
+[![Documentation](https://img.shields.io/badge/Docs-WIP-red.svg)](https://github.com/Icepenguins101/charms-bar-port/wiki)
+[![Issues](https://img.shields.io/github/issues/Icepenguins101/charms-bar-port.svg)](https://github.com/Icepenguins101/charms-bar-port/issues)
+
 ## About
 <b>Charms Bar Port</b> is the brand new solution for bringing back the Windows 8.x Charms bar to Windows 10 and Windows 11, using real files from Windows 8.x to meet your cravings and enhance your desktop.
 
@@ -41,8 +47,12 @@ On touch screens, swipe from the right edge towards to bring up the Charms bar. 
 Downloads are coming soon in the near future
 
 ## Q&As
+Q: Are forked repositories the complete edition of Charms Bar Port?<br />
+A: No. They are DEVELOPER builds, as the developer builds are not meant to be used as final products.
+<br />
+<br />
 Q: When will this be released?<br />
-A: I personally don't know as I'm always busy with other things.
+A: Be patient. Charms Bar Port will be released as soon as possible when I have all the time to finalize everything and fix some critical bugs.
 <br />
 <br />
 Q: I'm using a touch screen, why does the Action Center always open with the charms bar?<br />
@@ -96,3 +106,6 @@ A: I really would love to make more ports from Windows 8.1 as I'm considering to
 <br />
 Q: How can I contact you?<br />
 A: You can <a href="mailto:jaydenwmontoya@icloud.com">email me</a> for any assistance regarding Charms Bar Port and other products I have created.
+
+## DISCLAIMER !!2
+I'm not officially affiliated with Microsoft; I moved to Mac OS X a few years ago and have recently returned to Windows 10 for better performance using web development.
