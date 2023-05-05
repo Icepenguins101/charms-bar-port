@@ -107,5 +107,5 @@ A: I really would love to make more ports from Windows 8.1 as I'm considering to
 Q: How can I contact you?<br />
 A: You can <a href="mailto:jaydenwmontoya@icloud.com">email me</a> for any assistance regarding Charms Bar Port and other products I have created.
 
-## DISCLAIMER !!2
-I'm not officially affiliated with Microsoft; I moved to Mac OS X a few years ago and have recently returned to Windows 10 for better performance using web development.
+## DISCLAIMER !!
+I'm not officially affiliated with Microsoft; I moved to Mac OS X a few years ago for better stability and UI, and have recently returned to Windows 10 for better performance using web development. I will stil be using OS X as a daily driver.
