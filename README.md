@@ -13,17 +13,17 @@
 [![Issues](https://img.shields.io/github/issues/Icepenguins101/charms-bar-port.svg)](https://github.com/Icepenguins101/charms-bar-port/issues)
 
 ## About
-<b>Charms Bar Port</b> is the brand new solution for bringing back the Windows 8.x Charms bar to Windows 10 and Windows 11, using real files from Windows 8.x to meet your cravings and enhance your desktop.
+<b>Charms Bar Port</b> is the brand new solution for bringing back the Windows 8.x Charms bar to Windows 10 and Windows 11, using real files from Windows 8.x to <!-- meet your cravings and -->enhance your Windows environment and relive the Windows 8.x days.
 
 Forked and completely edited from <a href="https://github.com/Jerhynh/CharmsBarRevived">CharmsBarRevived</a>, <b>Charms Bar Port</b> will assist on helping you transition to Windows 10 and 11 without having to keep on the obsolete system forever.
 
 Are you a Charms Bar fan and tired of not having it in Windows 10/11? This is your solution... 
 
 ## Why was this created?
-As you may know, Windows 10 completely removed the Charms Bar upon release. There used to be vague ways to restore it in the old days using ValiiNet Charms, PopCharms, RocketDock, etc.
+As you may know, Microsoft made the annoucement to completely kill off the Charms Bar in Windows 10 in December 17, 2014 and upon release. There used to be vague ways to restore it in the old days using ValiiNet Charms, PopCharms, RocketDock, etc.
 
 
-ValiNet Charms as of 2023 is no longer available to download, PopCharms was only meant to be used between Windows 10 build 9780 and Windows 10 build 9926, and RocketDock is <b>very</b> outdated, so I created this project primarily to bring my needs of a Charms Bar back.
+ValiNet Charms as of 2023 is no longer available to download, PopCharms was only meant to be used between Windows 10 build 9780 and Windows 10 build 9913, and RocketDock is <b>very</b> outdated, so I created this project primarily to bring my needs of a Charms Bar back.
 
 ## How does it work?
 On touch screens, swipe from the right edge towards to bring up the Charms bar. If you're a mouse user, swipe to the top right corner and drag your cursor down to open the Charms bar. You can also use the keyboard shortcut Windows key + C, just like it was on Windows 8.x.
@@ -36,9 +36,10 @@ On touch screens, swipe from the right edge towards to bring up the Charms bar. 
 * Supports Windows 8.x-era registry hacks
 * High contrast support
 * Includes animation support
-* Multi-monitor support <!--(<b>Can only support up to 10 monitors!</b>)-->
+* Multi-monitor support
 * Touch-friendly
 * Uses WinRT resources
+* Switch between Windows 8.1 Update 3 or Windows 10 Technical Preview style on the fly
 
 ## Screenshots
 <img src="resource/preview.png"/>
@@ -49,6 +50,17 @@ Downloads are coming soon in the near future
 ## Q&As
 Q: Are forked repositories the complete edition of Charms Bar Port?<br />
 A: No. They are DEVELOPER builds, as the developer builds are not meant to be used as final products.
+<br />
+<br />
+Q: How can I switch to the Windows 10 Technical Preview style on Charms Bar Port?<br />
+A: This requires fiddling with the registry. I am not responsible if you mess up your system.
+<br />
+1. Press the “WIN+R” key combination to launch the Run dialog box, then type regedit and press enter. It’ll open the Registry Editor, and go to following key: 
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell\
+2. Under the ImmersiveShell key, create a new key called EdgeUI.
+3. Now select the newly created key “EdgeUI” and in the right-side pane, create a new DWORD named <b>DisableSettingsCharm</b> and set the value to 1.
+4. That’s it. It’ll remove the Settings panel from the Charms Bar, emulating the style of Windows 10 Technical Preview. You do not need to log off or restart the system. If you want to revert the change, set the value to 0 or delete the <b>DisableSettingsCharm</b> DWORD.
+<br />
 <br />
 <br />
 Q: When will this be released?<br />
@@ -65,8 +77,9 @@ A: This requires fiddling with the registry. I am not responsible if you mess up
 1. Press the “WIN+R” key combination to launch the Run dialog box, then type regedit and press enter. It’ll open the Registry Editor, and go to following key: 
 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell\
 2. Under the ImmersiveShell key, create a new key called EdgeUI.
-3. Now select the newly created key “EdgeUI” and in the right-side pane, create two new DWORDs named DisableTRCorner and DisableBRCorner and set their values to 1.
-4. That’s it. It’ll immediately disable the Charms Bar hot corners. You do not need to log off or restart the system.
+3. Now select the newly created key “EdgeUI” and in the right-side pane, create two new DWORDs named <b>DisableTRCorner</b> and <b>DisableBRCorner</b> and set their values to 1.
+3.1: Alternatively, select the newly created key “EdgeUI” and in the right-side pane, create a new DWORD named <b>DisableCharmsHint</b> and set the value to 1.
+4. That’s it. It’ll immediately disable the Charms Bar hot corners. You do not need to log off or restart the system. If you want to revert the change, set the values of <b>DisableTRCorner</b> and <b>DisableBRCorner</b> or <b>DisableCharmsHint</b>, to 0 or delete the <b>DisableTRCorner</b> and <b>DisableBRCorner</b>, or <b>DisableCharmsHint</b> DWORDs.
 <br />
 Q: Win+C is taken, can you use another hotkey?<br />
 A: No, this is to make the experience more authentic. Close the program that is using Win+C and Charms Bar Port will use that hotkey.
