@@ -62,7 +62,6 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell\
 4. That’s it. It’ll remove the Settings panel from the Charms Bar, emulating the style of Windows 10 Technical Preview. You do not need to log off or restart the system. If you want to revert the change, set the value to 0 or delete the <b>DisableSettingsCharm</b> DWORD.
 <br />
 <br />
-<br />
 Q: When will this be released?<br />
 A: Be patient. Charms Bar Port will be released as soon as possible when I have all the time to finalize everything and fix some critical bugs.
 <br />
@@ -79,6 +78,7 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell\
 2. Under the ImmersiveShell key, create a new key called EdgeUI.
 3. Now select the newly created key “EdgeUI” and in the right-side pane, create two new DWORDs named <b>DisableTRCorner</b> and <b>DisableBRCorner</b> and set their values to 1. Alternatively, select the newly created key “EdgeUI” and in the right-side pane, create a new DWORD named <b>DisableCharmsHint</b> and set the value to 1.
 4. That’s it. It’ll immediately disable the Charms Bar hot corners. You do not need to log off or restart the system. If you want to revert the change, set the values of <b>DisableTRCorner</b> and <b>DisableBRCorner</b> or <b>DisableCharmsHint</b>, to 0 or delete the <b>DisableTRCorner</b> and <b>DisableBRCorner</b>, or <b>DisableCharmsHint</b> DWORDs.
+<br />
 <br />
 Q: Win+C is taken, can you use another hotkey?<br />
 A: No, this is to make the experience more authentic. Close the program that is using Win+C and Charms Bar Port will use that hotkey.
