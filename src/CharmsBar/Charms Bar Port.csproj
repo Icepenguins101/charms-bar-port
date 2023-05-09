@@ -9,7 +9,7 @@
 	  <UseWindowsForms>True</UseWindowsForms>
 	  <ErrorReport>none</ErrorReport>
 	  <ApplicationIcon>Assets\Images\Icon1.ico</ApplicationIcon>
-	  <ApplicationManifest>D:\Windows 8 Charms Bar for 10\src\app.manifest</ApplicationManifest>
+	  <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
