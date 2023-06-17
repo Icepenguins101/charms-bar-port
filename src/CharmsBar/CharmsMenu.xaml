@@ -1,0 +1,62 @@
+<Window x:Class="CharmsBarPort.CharmsMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Opacity="1.002"
+        mc:Ignorable="d"
+        Title="Charms Menu"
+        AllowsTransparency="True"
+        ResizeMode="NoResize"
+        Topmost="True"
+        Width="Auto"
+        Height="240"
+        SizeToContent="WidthAndHeight"
+        WindowStyle="None"
+        ShowInTaskbar="False"
+        UseLayoutRounding="True"
+        SnapsToDevicePixels="True"
+        Icon="/Icon.png">
+    <Grid Name="CharmMenu" Margin="0,10,0,10" Height="220">
+
+        <StackPanel Grid.Row="1" Background="#111111" Margin="0,0,0,0" VerticalAlignment="Top" UseLayoutRounding="True" SnapsToDevicePixels="True" Height="60">
+        </StackPanel>
+
+        <StackPanel Name="SettingsBG" Grid.Row="1" Background="#111111" Margin="0,8,0,0" VerticalAlignment="Top" UseLayoutRounding="True" SnapsToDevicePixels="True" Height="60">
+            <Image Name="SettingsCharm" Source="/Assets/Images/Settings.png" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24" Width="24" Margin="15,0,0,0" Visibility="Visible" UseLayoutRounding="True" SnapsToDevicePixels="True"/>
+        </StackPanel>
+
+        <Label Name="SettingsText" Content="Settings" Foreground="#A0A0A0" FontFamily="Segoe UI Emoji" FontSize="15.2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="47,5,0,0" Visibility="Visible" UseLayoutRounding="True" SnapsToDevicePixels="True"/>
+
+        <StackPanel Name="DevicesBG" Grid.Row="2" Background="#111111" Margin="0,48,0,0" VerticalAlignment="Top" UseLayoutRounding="True" SnapsToDevicePixels="True" Height="60">
+            <Image Name="DevicesCharm" Source="/Assets/Images/Devices.png" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24" Width="24" Margin="15,0,0,0" Visibility="Visible" UseLayoutRounding="True" SnapsToDevicePixels="True"/>
+        </StackPanel>
+
+        <Label Name="DevicesText" Content="Devices" Foreground="#A0A0A0" FontFamily="Segoe UI Emoji" FontSize="15.2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="47,45,0,0" Visibility="Visible" UseLayoutRounding="True" SnapsToDevicePixels="True"/>
+
+        <StackPanel Name="ShareBG" Grid.Row="3" Background="#111111" Margin="0,88,0,0" VerticalAlignment="Top" UseLayoutRounding="True" SnapsToDevicePixels="True" Height="60">
+            <Image Name="ShareCharm" Source="/Assets/Images/Share.png" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24" Width="24" Margin="15,0,0,0" Visibility="Visible" UseLayoutRounding="True" SnapsToDevicePixels="True"/>
+        </StackPanel>
+
+        <Label Name="ShareText" Content="Share" Foreground="#A0A0A0" FontFamily="Segoe UI Emoji" FontSize="15.2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="47,85,0,0" Visibility="Visible" UseLayoutRounding="True" SnapsToDevicePixels="True"/>
+
+        <StackPanel Name="SearchBG" Grid.Row="4" Background="#111111" Margin="0,128,0,0" VerticalAlignment="Top" UseLayoutRounding="True" SnapsToDevicePixels="True" Height="60">
+            <Image Name="SearchCharm" Source="/Assets/Images/Search.png" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24" Width="24" Margin="15,0,0,0" Visibility="Visible" UseLayoutRounding="True" SnapsToDevicePixels="True"/>
+        </StackPanel>
+
+        <Label Name="SearchText" Content="Search" Foreground="#A0A0A0" FontFamily="Segoe UI Emoji" FontSize="15.2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="47,125,0,0" Visibility="Visible" UseLayoutRounding="True" SnapsToDevicePixels="True"/>
+
+
+        <StackPanel Name="WinBG" Grid.Row="5" Background="#111111" Margin="0,0,0,0" VerticalAlignment="Bottom" UseLayoutRounding="True" SnapsToDevicePixels="True" Height="60">
+            <StackPanel Name="MetroColor" Background="{x:Static SystemParameters.WindowGlassBrush}" Margin="5,0,0,0" HorizontalAlignment="Left" SnapsToDevicePixels="True" Height="30" Width="39">
+                <Image Name="WinCharm" Source="/Assets/Images/Windows8.png" HorizontalAlignment="Left" VerticalAlignment="Top" Height="45" Width="45" Margin="0,-3,0,0" Visibility="Visible" UseLayoutRounding="True" SnapsToDevicePixels="True"/>
+            </StackPanel>
+        </StackPanel>
+
+        <Label Name="WinText" Content="Start       " Foreground="#A0A0A0" FontFamily="Segoe UI Emoji" FontSize="15.2" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="47,165,12,-63" Visibility="Visible" UseLayoutRounding="True" SnapsToDevicePixels="True"/>
+
+        <StackPanel Grid.Row="0" Width="Auto">
+            <Label Name="useMenu" Content="-1" Foreground="{x:Static SystemColors.WindowTextBrush}" Visibility="Hidden"/>
+        </StackPanel>
+    </Grid>
+</Window>

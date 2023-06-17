@@ -1,180 +1,390 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net7.0-windows10.0.17763.0</TargetFramework>
-    <UseWPF>true</UseWPF>
-    <Title>Charms Bar Port</Title>
-	  <Company>Jayden Montoya</Company>
-	  <UseWindowsForms>True</UseWindowsForms>
-	  <ErrorReport>none</ErrorReport>
-	  <ApplicationIcon>Assets\Images\Icon1.ico</ApplicationIcon>
-	  <ApplicationManifest>app.manifest</ApplicationManifest>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net7.0-windows10.0.17763.0</TargetFramework>
+		<UseWPF>true</UseWPF>
+		<Title>Charms Bar Port</Title>
+		<Company>Jayden Montoya</Company>
+		<UseWindowsForms>True</UseWindowsForms>
+		<ErrorReport>none</ErrorReport>
+		<ApplicationIcon>Assets\Images\Icon1.ico</ApplicationIcon>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+	</PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <Optimize>True</Optimize>
-    <WarningLevel>0</WarningLevel>
-  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<Optimize>True</Optimize>
+		<WarningLevel>0</WarningLevel>
+	</PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <WarningLevel>0</WarningLevel>
-  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<WarningLevel>0</WarningLevel>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="Assets\Images\Battery0.png" />
-    <None Remove="Assets\Images\Battery1.png" />
-    <None Remove="Assets\Images\Battery10.png" />
-    <None Remove="Assets\Images\Battery20.png" />
-    <None Remove="Assets\Images\Battery30.png" />
-    <None Remove="Assets\Images\Battery40.png" />
-    <None Remove="Assets\Images\Battery50.png" />
-    <None Remove="Assets\Images\Battery60.png" />
-    <None Remove="Assets\Images\Battery70.png" />
-    <None Remove="Assets\Images\Battery80.png" />
-    <None Remove="Assets\Images\Battery90.png" />
-    <None Remove="Assets\Images\BatteryFullCharging.png" />
-    <None Remove="Assets\Images\DevicesInactive.png" />
-	<None Remove="Assets\Images\Devices.png" />
-	<None Remove="Assets\Images\fader.png" />
-	<None Remove="Assets\Images\Icon112.png" />
-	<None Remove="Assets\Images\Icon118.png" />
-    <None Remove="Assets\Images\Search.png" />
-	<None Remove="Assets\Images\SearchInactive.png" />
-    <None Remove="Assets\Images\Settings.png" />
-    <None Remove="Assets\Images\SettingsInactive.png" />
-    <None Remove="Assets\Images\Share.png" />
-	<None Remove="Assets\Images\ShareInactive.png" />
-    <None Remove="Assets\Images\SettingsInactive.png" />
-    <None Remove="Assets\Images\Windows8.png" />
-    <None Remove="Assets\Images\Windows8Down.png" />
-    <None Remove="Assets\Images\Windows8HighContrast.png" />
-    <None Remove="Assets\Images\Windows8Hover.png" />
-    <None Remove="Assets\Images\Windows8Inactive.png" />
-    <None Remove="Icon.png" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Remove="Assets\Images\Battery0.png" />
+		<None Remove="Assets\Images\Battery0Dark.png" />
+		<None Remove="Assets\Images\Battery1.png" />
+		<None Remove="Assets\Images\Battery10.png" />
+		<None Remove="Assets\Images\Battery10Dark.png" />
+		<None Remove="Assets\Images\Battery1Dark.png" />
+		<None Remove="Assets\Images\Battery20.png" />
+		<None Remove="Assets\Images\Battery20Dark.png" />
+		<None Remove="Assets\Images\Battery30.png" />
+		<None Remove="Assets\Images\Battery30Dark.png" />
+		<None Remove="Assets\Images\Battery40.png" />
+		<None Remove="Assets\Images\Battery40Dark.png" />
+		<None Remove="Assets\Images\Battery50.png" />
+		<None Remove="Assets\Images\Battery50Dark.png" />
+		<None Remove="Assets\Images\Battery5Dark.png" />
+		<None Remove="Assets\Images\Battery60.png" />
+		<None Remove="Assets\Images\Battery60Dark.png" />
+		<None Remove="Assets\Images\Battery70.png" />
+		<None Remove="Assets\Images\Battery70Dark.png" />
+		<None Remove="Assets\Images\Battery80.png" />
+		<None Remove="Assets\Images\Battery80Dark.png" />
+		<None Remove="Assets\Images\Battery90.png" />
+		<None Remove="Assets\Images\Battery90Dark.png" />
+		<None Remove="Assets\Images\BatteryFullCharging.png" />
+		<None Remove="Assets\Images\BatteryFullChargingDark.png" />
+		<None Remove="Assets\Images\BatteryFullDark.png" />
+		<None Remove="Assets\Images\DevicesDark.png" />
+		<None Remove="Assets\Images\DevicesInactive.png" />
+		<None Remove="Assets\Images\Devices.png" />
+		<None Remove="Assets\Images\fader light.png" />
+		<None Remove="Assets\Images\fader.png" />
+		<None Remove="Assets\Images\Icon103Dark.png" />
+		<None Remove="Assets\Images\Icon106Dark.png" />
+		<None Remove="Assets\Images\Icon109.png" />
+		<None Remove="Assets\Images\Icon109Dark.png" />
+		<None Remove="Assets\Images\Icon112.png" />
+		<None Remove="Assets\Images\Icon112Dark.png" />
+		<None Remove="Assets\Images\Icon115.png" />
+		<None Remove="Assets\Images\Icon115Dark.png" />
+		<None Remove="Assets\Images\Icon118.png" />
+		<None Remove="Assets\Images\Icon118Dark.png" />
+		<None Remove="Assets\Images\Icon121.png" />
+		<None Remove="Assets\Images\Icon121Dark.png" />
+		<None Remove="Assets\Images\Icon124.png" />
+		<None Remove="Assets\Images\Icon124Dark.png" />
+		<None Remove="Assets\Images\Icon127.png" />
+		<None Remove="Assets\Images\Icon127Dark.png" />
+		<None Remove="Assets\Images\Icon130.png" />
+		<None Remove="Assets\Images\Icon130Dark.png" />
+		<None Remove="Assets\Images\Icon133Dark.png" />
+		<None Remove="Assets\Images\Icon139.png" />
+		<None Remove="Assets\Images\Icon139Dark.png" />
+		<None Remove="Assets\Images\Icon142.png" />
+		<None Remove="Assets\Images\Icon142Dark.png" />
+		<None Remove="Assets\Images\Icon145.png" />
+		<None Remove="Assets\Images\Icon145Dark.png" />
+		<None Remove="Assets\Images\Icon148.png" />
+		<None Remove="Assets\Images\Icon148Dark.png" />
+		<None Remove="Assets\Images\Icon151Dark.png" />
+		<None Remove="Assets\Images\Search.png" />
+		<None Remove="Assets\Images\SearchDark.png" />
+		<None Remove="Assets\Images\SearchInactive.png" />
+		<None Remove="Assets\Images\Settings.png" />
+		<None Remove="Assets\Images\SettingsDark.png" />
+		<None Remove="Assets\Images\SettingsInactive.png" />
+		<None Remove="Assets\Images\Share.png" />
+		<None Remove="Assets\Images\ShareDark.png" />
+		<None Remove="Assets\Images\ShareInactive.png" />
+		<None Remove="Assets\Images\SettingsInactive.png" />
+		<None Remove="Assets\Images\Windows8.png" />
+		<None Remove="Assets\Images\Windows8Down.png" />
+		<None Remove="Assets\Images\Windows8HighContrast.png" />
+		<None Remove="Assets\Images\Windows8HighContrastDark.png" />
+		<None Remove="Assets\Images\Windows8Hover.png" />
+		<None Remove="Assets\Images\Windows8Inactive.png" />
+		<None Remove="Icon.png" />
+	</ItemGroup>
 
-  <ItemGroup>
-	<Resource Include="Assets\Images\Battery0.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-	<Resource Include="Assets\Images\Battery5.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-	<Resource Include="Assets\Images\Battery30.png">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</Resource>
-	<Resource Include="Assets\Images\Battery40.png">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</Resource>
-	<Resource Include="Assets\Images\Battery1.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Images\Battery10.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Images\Battery20.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Images\Battery50.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Images\Battery60.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Images\Battery70.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Images\Battery80.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Images\Battery90.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Images\Windows8Down.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
+	<ItemGroup>
+		<Resource Include="Assets\Images\Battery0.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Battery0Dark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Battery1Dark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Battery20Dark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Battery30Dark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Battery40Dark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Battery5.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Battery30.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Battery40.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Battery1.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Battery10.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Battery20.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Battery50.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Battery50Dark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Battery5Dark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Battery60.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Battery60Dark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Battery70.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Battery70Dark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Battery80.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Battery80Dark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Battery90.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Battery90Dark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\BatteryFullChargingDark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\BatteryFullDark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\DevicesDark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\fader light.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon103Dark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon106Dark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon109.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon109Dark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon112Dark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon115.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon115Dark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon118Dark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon121.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon121Dark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon124.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon124Dark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon127.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon127Dark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon130.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon130Dark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon133Dark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon139.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon139Dark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon142.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon142Dark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon145.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon145Dark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon148.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon148Dark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon151Dark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\SearchDark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\SettingsDark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\ShareDark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Windows8Down.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+	</ItemGroup>
 
-  <ItemGroup>
-    <Resource Include="Assets\Images\BatteryFull.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Images\BatteryFullCharging.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Images\Devices.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Images\DevicesInactive.png">
-	 <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Images\fader.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-	<Resource Include="Assets\Images\Icon103.png">
-	<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</Resource>
-	<Resource Include="Assets\Images\Icon106.png">
-	<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</Resource>
-	<Resource Include="Assets\Images\Icon112.png">
-	<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</Resource>
-	<Resource Include="Assets\Images\Icon118.png">
-	<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</Resource>
-	<Resource Include="Assets\Images\Icon133.png">
-	<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</Resource>
-    <Resource Include="Assets\Images\Icon151.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-	<Resource Include="Assets\Images\Search.png">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</Resource>
-	<Resource Include="Assets\Images\Settings.png">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-	<Resource Include="Assets\Images\Share.png">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	 </Resource>
-    <Resource Include="Assets\Images\SearchInactive.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Images\SettingsInactive.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Images\ShareInactive.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Images\Windows8.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Images\Windows8HighContrast.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Images\Windows8Hover.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\Images\Windows8Inactive.png">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Icon.png" />
-  </ItemGroup>
+	<ItemGroup>
+		<Resource Include="Assets\Images\BatteryFull.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\BatteryFullCharging.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Devices.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\DevicesInactive.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\fader.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon103.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon106.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon112.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon118.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon133.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Icon151.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Search.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Settings.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Share.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\SearchInactive.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\SettingsInactive.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\ShareInactive.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Windows8.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Windows8HighContrast.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Windows8HighContrastDark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Windows8Hover.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Assets\Images\Windows8Inactive.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Icon.png" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Include="..\.editorconfig" Link=".editorconfig" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="..\.editorconfig" Link=".editorconfig" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Update="Assets\Images\Icon136.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
+	<ItemGroup>
+		<None Update="Assets\Images\Battery10Dark.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\Images\Icon136.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
+	<ItemGroup>
+		<Folder Include="Properties\" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+		<None Update="Properties\Settings.settings">
+			<Generator>SettingsSingleFileGenerator</Generator>
+			<LastGenOutput>Settings.Designer.cs</LastGenOutput>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="System.Runtime" Version="4.3.1" />
+		<PackageReference Include="System.Runtime.InteropServices" Version="4.3.0" />
+		<PackageReference Include="System.Runtime.InteropServices.WindowsRuntime" Version="4.3.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="App.config" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Properties\Settings.Designer.cs">
+			<DesignTimeSharedInput>True</DesignTimeSharedInput>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Settings.settings</DependentUpon>
+		</Compile>
+	</ItemGroup>
 
 </Project>

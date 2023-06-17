@@ -7,37 +7,49 @@
         mc:Ignorable="d"
         Title="Charms Bar Clock"
         AllowsTransparency="True"
+        ResizeMode="NoResize"
         Topmost="True"
-        Width="450"
-        Height="140">
-    <Grid Focusable="False" Margin="0,0,-13,0">
-        <StackPanel Grid.Row="1">
-            
-            <Image Name="NoInternetFound" Source="Assets/Images/Icon112.png" HorizontalAlignment="Left" Width="25" Margin="37,3,0,-99" Visibility="Hidden"/>
-            <Image Name="HasInternet" Source="Assets/Images/Icon151.png" HorizontalAlignment="Left" Width="25" Margin="37,3,0,-99" Visibility="Hidden"/>
-            <Image Name="WeakInternet" Source="Assets/Images/Icon133.png" HorizontalAlignment="Left" Width="25" Margin="37,3,0,-99" Visibility="Hidden"/>
-            <Image Name="NoDrivers" Source="Assets/Images/Icon103.png" HorizontalAlignment="Left" Width="24" Margin="39,3,0,-99" Visibility="Visible"/>
-            <Image Name="Ethernet" Source="Assets/Images/Icon106.png" HorizontalAlignment="Left" Width="24" Margin="39,3,0,-99" Visibility="Hidden"/>
-            <Image Name="Airplane" Source="Assets/Images/Icon118.png" HorizontalAlignment="Left" Width="24" Margin="39,3,0,-99" Visibility="Hidden"/>
-            
-            <Image Name="BatteryLife" Source="Assets/Images/BatteryFull.png" HorizontalAlignment="Left" Width="24" Margin="39,9,0,-169" Visibility="Visible"/>
-            <Image Name="IsCharging" Source="Assets/Images/BatteryFullCharging.png" HorizontalAlignment="Left" Width="24" Margin="39,9,0,-169" Visibility="Hidden"/>
-            <Label Name="Clocks" Content="10                           00" Foreground="white" FontFamily="Segoe UI light" FontSize="85" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="95,3,0,-106"/>
-            <Label Name="Clocked" Content="04" Foreground="white" FontFamily="Segoe UI light" FontSize="85" Margin="188,-17,-190,-198"/>
-            <Label Name="ClockLines" Content=":" Foreground="white" FontFamily="Segoe UI Light" FontSize="84" Margin="169,-24.99,-190,-98"/>
-            <Label Name="Week" Content="Tuesday" Foreground="white" FontFamily="Segoe UI Semilight" FontSize="32" VerticalAlignment="Bottom" Margin="298,2,0,-18"/>
-
-            <Label Name="Date" Content="January 10" Foreground="white" FontFamily="Segoe UI Semilight" FontSize="32" VerticalAlignment="Bottom" Margin="300,4,0,-24"/>
-            
-        <Border Background="{x:Static SystemColors.MenuBrush}"
+        Width="Auto"
+        Height="140"
+        SizeToContent="Width"
+        WindowStyle="None"
+        ShowInTaskbar="False"
+        UseLayoutRounding="True"
+        SnapsToDevicePixels="True"
+        Icon="/Icon.png">
+    <Grid Name="CharmClock" Focusable="False" Margin="0,0,0,0">
+        <Border Background="{x:Static SystemColors.WindowBrush}"
         Name="ClockBorder"
         Panel.ZIndex="-1"
         BorderBrush="{x:Static SystemColors.WindowTextBrush}" 
         BorderThickness="2"
+        Width="Auto"
         Height="139"
-        Margin="-13,-89,0,0">
-            </Border>
-            
+        Margin="0,0,-10,0">
+        </Border>
+        
+        <StackPanel Grid.Row="0" Width="Auto">
+
+            <Image Name="NoInternetFound" Source="Assets/Images/Icon112Dark.png" HorizontalAlignment="Left" Width="25" Margin="37,3,0,-99" Visibility="Hidden"/>
+            <Image Name="NoInternet" Source="Assets/Images/Icon115Dark.png" HorizontalAlignment="Left" Width="25" Margin="37,3,0,-99" Visibility="Hidden"/>
+            <Image Name="HasInternet" Source="Assets/Images/Icon139Dark.png" HorizontalAlignment="Left" Width="25" Margin="37,3,0,-99" Visibility="Hidden"/>
+            <Image Name="WeakInternet" Source="Assets/Images/Icon133Dark.png" HorizontalAlignment="Left" Width="25" Margin="37,3,0,-99" Visibility="Hidden"/>
+            <Image Name="NoDrivers" Source="Assets/Images/Icon103Dark.png" HorizontalAlignment="Left" Width="24" Margin="39,3,0,-99" Visibility="Visible"/>
+            <Image Name="Ethernet" Source="Assets/Images/Icon106Dark.png" HorizontalAlignment="Left" Width="24" Margin="39,3,0,-99" Visibility="Hidden"/>
+            <Image Name="Airplane" Source="Assets/Images/Icon118Dark.png" HorizontalAlignment="Left" Width="24" Margin="39,3,0,-99" Visibility="Hidden"/>
+
+            <Image Name="BatteryLife" Source="Assets/Images/BatteryFullDark.png" HorizontalAlignment="Left" Width="24" Margin="39,9,0,-169" Visibility="Hidden"/>
+            <Image Name="IsCharging" Source="Assets/Images/BatteryFullChargingDark.png" HorizontalAlignment="Left" Width="24" Margin="39,9,0,-169" Visibility="Hidden"/>
+            <Label Name="Clocks" Content="1" Foreground="{x:Static SystemColors.WindowTextBrush}" FontFamily="Segoe UI light" FontSize="85" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="95, 3, 0, -106"/>
+            <Label Name="Clocked" Content="00" Foreground="{x:Static SystemColors.WindowTextBrush}" FontFamily="Segoe UI light" FontSize="85" Margin="144, -17, -190, -198"/>
+            <Label Name="ClockLines" Content=":" Foreground="{x:Static SystemColors.WindowTextBrush}" FontFamily="Segoe UI Light" FontSize="84" Margin="125, -24.99, -190, -98"/>
+
+            <StackPanel Name="AutoResizer" Visibility="Hidden" Width="Auto" Margin="0, 0, 0, 0">
+            </StackPanel>
+
+            <Label Name="Week" Content="Friday      " Foreground="{x:Static SystemColors.WindowTextBrush}" FontFamily="Segoe UI Semilight" FontSize="32" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="255, 2, 0, -18"/>
+            <Label Name="Date" Content="May 5" Foreground="{x:Static SystemColors.WindowTextBrush}" FontFamily="Segoe UI Semilight" FontSize="32" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="255, 3, 0, -24"/>
+            <Label Name="noClocks" Content="-1" Visibility="Hidden"/>
         </StackPanel>
     </Grid>
 </Window>
