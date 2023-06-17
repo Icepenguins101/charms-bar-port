@@ -1,5 +1,5 @@
 <p align="center">
-<img id="charmsbarPort" src="resource/darklogo.png"/>
+<img id="charmsbarPort" src="resource/logo.png"/>
 </p>
 
 <blockquote>
@@ -28,6 +28,10 @@ ValiNet Charms as of 2023 is no longer available to download, PopCharms was only
 ## How does it work?
 On touch screens, swipe from the right edge towards to bring up the Charms bar. If you're a mouse user, swipe to the top right corner and drag your cursor down to open the Charms bar. You can also use the keyboard shortcut Windows key + C, just like it was on Windows 8.x.
 
+## Requirements
+* Windows 10 or Windows 11
+* <a href="https://dotnet.microsoft.com/en-us/download/dotnet/7.0">.NET 7.0</a>
+
 ## Features
 * Powered by Visual Studio 2022
 * Based on Windows 8.1 Update 3
@@ -36,10 +40,17 @@ On touch screens, swipe from the right edge towards to bring up the Charms bar. 
 * Supports Windows 8.x-era registry hacks
 * High contrast support
 * Includes animation support
-* Multi-monitor support
+* Multi-monitor support (please read <a href="https://raw.githubusercontent.com/Icepenguins101/charms-bar-port/main/resource/helpwanted%2Ctxt">this</a>)
 * Touch-friendly
 * Uses WinRT resources
-* Switch between Windows 8.1 Update 3 or Windows 10 Technical Preview style on the fly
+* Customizable icons
+* Switch between Windows 8.1 Update 3, Windows 8 Developer Preview and a Windows 11 Fluent concept styles on the fly
+* Pin anything to the Charms Bar for easy access
+
+## Supported languages
+* Engllish
+* German (Deutsch)
+* Japanese (日本語)
 
 ## Screenshots
 <img src="resource/preview.png"/>
