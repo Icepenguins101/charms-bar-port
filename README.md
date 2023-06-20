@@ -43,8 +43,8 @@ On touch screens, swipe from the right edge towards to bring up the Charms bar. 
 * Multi-monitor support (please read <a href="https://raw.githubusercontent.com/Icepenguins101/charms-bar-port/main/resource/helpwanted%2Ctxt">this</a>)
 * Touch-friendly
 * Uses WinRT resources
-* Customizable icons
-* Switch between Windows 8.1 Update 3, Windows 8 Developer Preview and a Windows 11 Fluent concept styles on the fly
+* Customizable panels (can be removed through the Registry Editor)
+* Switch between a Windows 7 Metro concept, Windows 8 Developer Preview, Windows 8.1 Update 3, Windows 11 Metro concept and Windows 11 Fluent concept styles on the fly, or define your custom theme
 * Pin anything to the Charms Bar for easy access
 
 ## Supported languages
@@ -80,7 +80,7 @@ A: This is because the action center uses the same gesture. Disable it first to 
 <br />
 <br />
 Q: How can I switch to the Windows 10 Technical Preview style on Charms Bar Port?<br />
-A: This requires fiddling with the registry. I am not responsible if you mess up your system.<br />
+A: For a true Windows 10 Technical Preview style, you must stay on the Windows 8.1 Charms Bar theme and requires fiddling with the registry. I am not responsible if you mess up your system.<br />
 <br />
 <ol>
   <li>Press the “WIN+R” key combination to launch the Run dialog box, then type regedit and press enter. It’ll open the Registry Editor, and go to following key: 
@@ -115,7 +115,11 @@ A: This was meant to fix a crash bug. Use Task Manager if you want to stop the p
 <br />
 <br />
 Q: When I open the Start menu in Windows 10 the charms clock is not visible, why is that?<br />
-A: This is an issue I cannot fix without embedding it into Explorer itself or signing a certificate.
+A: This is an issue I cannot fix without embedding it into Explorer itself or signing a certificate.<!--
+<br />
+<br />
+Q: How can I create my custom Charms Bar theme?<br />
+A: TBA...-->
 <br />
 <br />
 Q: I have found a bug. Can you fix it?<br />
