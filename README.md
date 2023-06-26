@@ -13,7 +13,7 @@
 [![Issues](https://img.shields.io/github/issues/Icepenguins101/charms-bar-port.svg)](https://github.com/Icepenguins101/charms-bar-port/issues)
 
 ## About
-<b>Charms Bar Port</b> is the brand new solution for bringing back the Windows 8.x Charms bar to Windows 10 and Windows 11, using real files from Windows 8.x to <!-- meet your cravings and -->enhance your Windows environment and relive the Windows 8.x days.
+<b>Charms Bar Port</b> is the brand new solution for bringing back the Windows 8.x Charms bar to Windows 10 and Windows 11, using real files from Windows 8.x to enhance your Windows environment and relive the Windows 8.x days.
 
 Forked and completely edited from <a href="https://github.com/Jerhynh/CharmsBarRevived">CharmsBarRevived</a>, <b>Charms Bar Port</b> will assist on helping you transition to Windows 10 and 11 without having to keep on the obsolete system forever.
 
@@ -26,7 +26,14 @@ As you may know, Microsoft made the annoucement to completely kill off the Charm
 ValiNet Charms as of 2023 is no longer available to download, PopCharms was only meant to be used between Windows 10 build 9780 and Windows 10 build 9913, and RocketDock is <b>very</b> outdated, so I created this project primarily to bring my needs of a Charms Bar back.
 
 ## How does it work?
-On touch screens, swipe from the right edge towards to bring up the Charms bar. If you're a mouse user, swipe to the top right corner and drag your cursor down to open the Charms bar. You can also use the keyboard shortcut Windows key + C, just like it was on Windows 8.x.
+On touch screens, swipe from the right edge towards to bring up the Charms bar. If you're a mouse user, swipe to the top right corner and drag your cursor down to open the Charms bar. You can also use the keyboard shortcut Windows key + C, just like it was on Windows 8.x. Included in the Charms Bar are:
+<br />
+<br />
+<b>Search:</b> Opens the search bar from the taskbar on Win32 programs (easily remappable to function as <a href="https://github.com/srwi/EverythingToolbar">EverythingToolbar</a>, perhaps maybe even more programs that support hotkeys), or on supported Metro apps, brings their Search charm.<br />
+<b>Share:</b> Opens the share charm.<br />
+<b>Start:</b> Opens the start menu/screen. If you are using <a href="https://github.com/Open-Shell/Open-Shell-Menu">Open-Shell</a>, you can remap this button to open up their start menu instead or to completely disable its functionality.<br />
+<b>Devices:</b> Opens the Connect charm.<br />
+<b>Settings:</b> Opens the Settings Metro app on Win32 programs or the Settings charm on supported Metro apps.
 
 ## Requirements
 * Windows 10 or Windows 11
@@ -35,17 +42,19 @@ On touch screens, swipe from the right edge towards to bring up the Charms bar. 
 ## Features
 * Powered by Visual Studio 2022
 * Based on Windows 8.1 Update 3
+* Language-aware (automatically switches depending on your OS language)
 * Includes accent colors
 * Network/battery status included
 * Supports Windows 8.x-era registry hacks
 * High contrast support
-* Includes animation support
+* Fully animated to emulate Windows 8.x (can be disabled in the OS settings)
 * Multi-monitor support (please read <a href="https://raw.githubusercontent.com/Icepenguins101/charms-bar-port/main/resource/helpwanted%2Ctxt">this</a>)
 * Touch-friendly
 * Uses WinRT resources
 * Customizable panels (can be removed through the Registry Editor)
-* Switch between a Windows 7 Metro concept, Windows 8 Developer Preview, Windows 8.1 Update 3, Windows 11 Metro concept and Windows 11 Fluent concept styles on the fly, or define your custom theme
+* Fully designable: includes a Windows 7 Metro concept, Windows 8 Developer Preview, Windows 8.1 Update 3, Windows 11 Metro concept and Windows 11 Fluent concept styles by default, or you can define your custom theme instead.
 * Pin anything to the Charms Bar for easy access
+* Switch between Win32 and Metro mode for the currently-focused program.
 
 ## Supported languages
 * Engllish
@@ -115,11 +124,11 @@ A: This was meant to fix a crash bug. Use Task Manager if you want to stop the p
 <br />
 <br />
 Q: When I open the Start menu in Windows 10 the charms clock is not visible, why is that?<br />
-A: This is an issue I cannot fix without embedding it into Explorer itself or signing a certificate.<!--
+A: This is an issue I cannot fix without embedding it into Explorer itself or signing a certificate.
 <br />
 <br />
-Q: How can I create my custom Charms Bar theme?<br />
-A: TBA...-->
+Q: Can I fork this repository to release your work now?<br />
+A: No. You can only fork it to make changes and released developer builds are not to be used for local purposes.
 <br />
 <br />
 Q: I have found a bug. Can you fix it?<br />
@@ -134,4 +143,4 @@ Q: How can I contact you?<br />
 A: You can <a href="mailto:jaydenwmontoya@icloud.com">email me</a> for any assistance regarding Charms Bar Port and other products I have created.
 
 ## DISCLAIMER !!
-I'm not officially affiliated with Microsoft; I moved to Mac OS X a few years ago for better stability and UI, and have recently returned to Windows 10 for better performance using web development. I will still be using OS X as a daily driver.
+I'm not officially affiliated with Microsoft; I moved to Mac OS X a few years ago for better stability and UI, and have temporarily returned to Windows 10 for better performance using web development with the announcement of macOS Sonoma until I get a modern MacBook Pro. I will still be using Mac OS X as a daily driver, so there may not be enough focus given to Charms Bar Port.
