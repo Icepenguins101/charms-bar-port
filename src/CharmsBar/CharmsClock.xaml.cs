@@ -35,9 +35,10 @@ namespace CharmsBarPort
 {
     public partial class CharmsClock : Window
     {
+        public BackgroundWorker CheckSignal = new BackgroundWorker();
         public Microsoft.Win32.RegistryKey localKey = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
         public int isAirPlaneOn = 0;
-        public BackgroundWorker CheckSignal = new BackgroundWorker();
+        public bool useTransparency = true;
         public string nw4 = "";
         public string nw5 = "";
         public string isDark = "";
@@ -72,6 +73,17 @@ namespace CharmsBarPort
 
         private void _initTimer()
         {
+            if (SystemParameters.HighContrast == true)
+            {
+                HasInternet.Source = new BitmapImage(new Uri(@"/Assets/Images/Icon151Dark.png", UriKind.Relative));
+                WeakInternet.Source = new BitmapImage(new Uri(@"/Assets/Images/Icon133Dark.png", UriKind.Relative));
+            }
+            else
+            {
+                HasInternet.Source = new BitmapImage(new Uri(@"/Assets/Images/Icon151.png", UriKind.Relative));
+                WeakInternet.Source = new BitmapImage(new Uri(@"/Assets/Images/Icon133.png", UriKind.Relative));
+            }
+
             System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
             t.Interval = 1;
             t.Tick += OnTimedEvent;
@@ -85,11 +97,27 @@ namespace CharmsBarPort
             {
                 try
                 {
-                    RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ImmersiveShell\\EdgeUi", false);
+                    RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize", false);
                     if (key != null)
                     {
                         // get value 
-                        string noClock = key.GetValue("DisableCharmsClock", -1, RegistryValueOptions.None).ToString(); //this is not in Windows 8.1, but used to remove the Charms Clock
+                        string noTransparency = key.GetValue("EnableTransparency", -1, RegistryValueOptions.None).ToString(); //this is not in Windows 8.1, but used to remove transparency
+
+                        if (noTransparency == "-1" || noTransparency == "1")
+                        {
+                            useTransparency = true;
+                        }
+                        else
+                        {
+                            useTransparency = false;
+                        }
+                    }
+
+                    RegistryKey keys = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\ImmersiveShell\\EdgeUi", false);
+                    if (keys != null)
+                    {
+                        // get value 
+                        string noClock = keys.GetValue("DisableCharmsClock", -1, RegistryValueOptions.None).ToString(); //this is not in Windows 8.1, but used to remove the Charms Clock
 
                             if (noClock == "-1")
                             {
@@ -100,8 +128,23 @@ namespace CharmsBarPort
                                 noClocks.Content = noClock;
                             }
 
+                        } else
+                    {
+                        string noClock = "0";
+
+                        if (noClock == "-1")
+                        {
+                            noClocks.Content = "0";
                         }
-                        key.Close();
+                        else
+                        {
+                            noClocks.Content = noClock;
+                        }
+
+                    }
+
+                    key.Close();
+                    keys.Close();
                     }
                 
                 catch (Exception ex)  //just for demonstration...it's always best to handle specific exceptions
@@ -148,7 +191,15 @@ namespace CharmsBarPort
                 {
                     ClockBorder.Visibility = Visibility.Hidden;
                     BrushConverter converter = new();
-                    ClockLines.Foreground = (Brush)converter.ConvertFromString("#ffffff");
+                        if (useTransparency == false)
+                        {
+                            this.Background = (Brush)converter.ConvertFromString("#111111");
+                        }
+                        else
+                        {
+                            this.Background = (Brush)converter.ConvertFromString("#f0111111");
+                        }
+                        ClockLines.Foreground = (Brush)converter.ConvertFromString("#ffffff");
                     Clocks.Foreground = (Brush)converter.ConvertFromString("#ffffff");
                     Week.Foreground = (Brush)converter.ConvertFromString("#ffffff");
                     Date.Foreground = (Brush)converter.ConvertFromString("#ffffff");
@@ -157,6 +208,7 @@ namespace CharmsBarPort
 
                 if (SystemParameters.HighContrast == true)
                 {
+                    this.Background = SystemColors.WindowBrush;
                     ClockBorder.Visibility = Visibility.Visible;
                     ClockLines.Foreground = SystemColors.WindowTextBrush;
                     Clocks.Foreground = SystemColors.WindowTextBrush;
@@ -165,19 +217,10 @@ namespace CharmsBarPort
                     Clocked.Foreground = SystemColors.WindowTextBrush;
                 }
 
-                try
-                {
-                    while (!CheckSignal.IsBusy)
-                    {
-                        CheckSignal.RunWorkerAsync();
+                        while (!CheckSignal.IsBusy && this.IsVisible == true)
+                        {
+                            CheckSignal.RunWorkerAsync();
                     }
-                }
-
-                catch(Exception err)
-                {
-                    
-                }
-
                 CheckBatteryStatus();
                 ClockBorder.BorderBrush = SystemColors.WindowTextBrush;
                 var localKey = RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, RegistryView.Registry64);
@@ -513,77 +556,99 @@ namespace CharmsBarPort
         }
         private bool IsWeak()
         {
-            var connectionProfile = NetworkInformation.GetInternetConnectionProfile();
-            return (connectionProfile != null &&
-                  (connectionProfile.GetNetworkConnectivityLevel() == NetworkConnectivityLevel.ConstrainedInternetAccess));
+            try
+            {
+                var connectionProfile = NetworkInformation.GetInternetConnectionProfile();
+                return (connectionProfile != null &&
+                      (connectionProfile.GetNetworkConnectivityLevel() == NetworkConnectivityLevel.ConstrainedInternetAccess));
+            }
+
+            catch (Exception err)
+            {
+                System.Windows.Forms.Application.Restart();
+                return false;
+            }
         }
 
         private bool IsLocal()
         {
-            var connectionProfile = NetworkInformation.GetInternetConnectionProfile();
-            return (connectionProfile != null &&
-                  (connectionProfile.GetNetworkConnectivityLevel() == NetworkConnectivityLevel.LocalAccess));
+            try
+            {
+                var connectionProfile = NetworkInformation.GetInternetConnectionProfile();
+                return (connectionProfile != null &&
+                      (connectionProfile.GetNetworkConnectivityLevel() == NetworkConnectivityLevel.LocalAccess));
+            }
+
+            catch (Exception err)
+            {
+                System.Windows.Forms.Application.Restart();
+                return false;
+            }
         }
 
         private void CheckSignal_DoWork(object sender, DoWorkEventArgs e)
         {
-            try
+            if (this.IsVisible == true)
             {
-                Process proc = new Process
+                try
                 {
-                    StartInfo = new ProcessStartInfo
+                    Process proc = new Process
                     {
-                        FileName = "netsh.exe",
-                        Arguments = "wlan show interfaces",
-                        UseShellExecute = false,
-                        RedirectStandardOutput = true,
-                        CreateNoWindow = true
-                    }
-                };
-                while (true)
-                {
-                    proc.Start();
-                    string line;
-                    int strength = 0;
-                    string wifi;
-                    while (!proc.StandardOutput.EndOfStream)
+                        StartInfo = new ProcessStartInfo
+                        {
+                            FileName = "netsh.exe",
+                            Arguments = "wlan show interfaces",
+                            UseShellExecute = false,
+                            RedirectStandardOutput = true,
+                            CreateNoWindow = true
+                        }
+                    };
+                    while (true)
                     {
-                        line = proc.StandardOutput.ReadLine();
-
-                        if (line.Contains("Name"))
+                        proc.Start();
+                        string line;
+                        int strength = 0;
+                        string wifi;
+                        while (!proc.StandardOutput.EndOfStream)
                         {
-                            string tmpx = line.Split(':')[1].Split("%")[0];
-                            isEthernet = tmpx.ToString();
-                        }
+                            line = proc.StandardOutput.ReadLine();
 
-                        if (line.Contains("There is"))
-                        {
-                            string tmp = line;
-                            hasDrivers = tmp.Replace(" ", "");
-                        }
+                            if (line.Contains("Name"))
+                            {
+                                string tmpx = line.Split(':')[1].Split("%")[0];
+                                isEthernet = tmpx.ToString();
+                            }
 
-                        if (line.Contains("Software"))
-                        {
-                            string tmp2 = line;
-                            nw5 = tmp2.Replace(" ", "");
-                        }
+                            if (line.Contains("There is"))
+                            {
+                                string tmp = line;
+                                hasDrivers = tmp.Replace(" ", "");
+                            }
 
-                        if (line.Contains("Signal"))
-                        {
-                            string tmp3 = line.Split(':')[1].Split("%")[0];
-                            Int32.TryParse(tmp3, out strength);
-                            nw4 = strength.ToString();
-                            CheckSignal.ReportProgress(strength);
+                            if (line.Contains("Software"))
+                            {
+                                string tmp2 = line;
+                                nw5 = tmp2.Replace(" ", "");
+                            }
+
+                            if (line.Contains("Signal"))
+                            {
+                                string tmp3 = line.Split(':')[1].Split("%")[0];
+                                Int32.TryParse(tmp3, out strength);
+                                nw4 = strength.ToString();
+                                CheckSignal.ReportProgress(strength);
+                            }
+
+
                         }
-System.Threading.Thread.Sleep(10);
-proc.WaitForExit(); //this should make it more stable, I hope
+                        proc.WaitForExit();
                     }
                 }
-            }
 
-            catch(Exception ex)
-            {
-                
+                catch (Exception ex)
+                {
+
+                }
             }
         }
 
