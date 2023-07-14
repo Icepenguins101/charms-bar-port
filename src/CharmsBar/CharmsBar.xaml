@@ -8,6 +8,7 @@
 		Name="Charms"
         Title="Charms Bar"
         Top="0"
+
         Width="86"
         AllowsTransparency="True"
         Topmost="True"
@@ -43,13 +44,14 @@
         <StackPanel Name="CharmBorder" Background="{x:Static SystemColors.WindowTextBrush}" Margin="-96,0,0,-999911" Width="2" Visibility="Visible" Panel.ZIndex="1" UseLayoutRounding="True" SnapsToDevicePixels="True">
 				<Label Name="noClocks" Content="0" Foreground="Transparent" Visibility="Hidden"></Label>
 				<Label Name="noMenu" Content="0" Foreground="Transparent" Visibility="Hidden"></Label>
+		     	<Label Name="noFades" Content="0" Foreground="Transparent" Visibility="Hidden"></Label>
 			<Label Name="CharmsHover" Content="False" Foreground="Transparent"></Label>
         </StackPanel>
 
 		<StackPanel Name="CharmBG" Background="#111111" Margin="0,0,0,-999911" Opacity="0.001" Visibility="Hidden" Panel.ZIndex="-2" UseLayoutRounding="True" SnapsToDevicePixels="True"
           UIElement.TouchUp="Charms_MouseUp" UIElement.TouchDown="Charms_MouseDown" UIElement.TouchMove="Charms_MouseMove" UIElement.TouchLeave="Charms_MouseLeave" UIElement.TouchEnter="Charms_MouseEnter"
           UIElement.MouseUp="Charms_MouseUp" UIElement.MouseDown="Charms_MouseDown" UIElement.MouseMove="Charms_MouseMove" UIElement.MouseLeave="Charms_MouseLeave" UIElement.MouseEnter="Charms_MouseEnter">
-
+			<Label Name="useMenu" Content="-1" Foreground="{x:Static SystemColors.WindowTextBrush}" Visibility="Hidden"/>
 		</StackPanel>
 
         <StackPanel Width="100" Height="100" Name="SearchHover" Grid.Row="3" Background="#333333" Visibility="Hidden" UseLayoutRounding="True" SnapsToDevicePixels="True">
@@ -117,6 +119,7 @@
                 <Label Name="vn5" Content="0" Foreground="Transparent" Visibility="Hidden"></Label>
                 <Label Name="vn6" Content="0" Foreground="Transparent" Visibility="Hidden"></Label>
                 <Label Name="vn7" Content="0" Foreground="Transparent" Visibility="Hidden"></Label>
+				<Label Name="ActiveWindow" Content="0" Foreground="Transparent" Visibility="Hidden"></Label>
             </Grid>
 
             <Grid Name="NoColor" Background="#00000000" VerticalAlignment="Top" Width="50" Height="50" Margin="0,-50,12,4" Visibility="Visible">
