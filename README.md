@@ -46,7 +46,7 @@ On touch screens, swipe from the right edge towards to bring up the Charms bar. 
 * Includes accent colors
 * Network/battery status included
 * Supports Windows 8.x-era registry hacks
-* High contrast support
+* Supports high contrast and light/dark mode preferences
 * Fully animated to emulate Windows 8.x (can be disabled in the OS settings)
 * Multi-monitor support (please read <a href="https://raw.githubusercontent.com/Icepenguins101/charms-bar-port/main/resource/helpwanted%2Ctxt">this</a>)
 * Touch-friendly
@@ -72,7 +72,7 @@ Q: Are forked repositories the complete edition of Charms Bar Port?<br />
 A: No. They are DEVELOPER builds, as the developer builds are not meant to be used as final products.
 <br />
 <br />
-Q: How can I disable the Charms Bar hot corners without closing the program?
+Q: How can I disable the Charms Bar hot corners without closing the program?<br />
 A: This requires fiddling with the registry. I am not responsible if you mess up your system.
 <br />
 1. Press the “WIN+R” key combination to launch the Run dialog box, then type regedit and press enter. It’ll open the Registry Editor, and go to following key: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell\
