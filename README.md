@@ -63,7 +63,7 @@ On touch screens, swipe from the right edge towards to bring up the Charms bar. 
 
 ## Screenshots
 <img src="resource/preview.png"/>
-<img src="resource/previewhighcontrast.png"/>
+<img src="resource/previewhighcontrast.jpg"/>
 
 ## Download
 Downloads are coming soon in the near future
