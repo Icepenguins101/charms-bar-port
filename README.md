@@ -32,7 +32,7 @@ On touch screens, swipe from the right edge towards to bring up the Charms bar. 
 <b>Search:</b> Opens the search bar from the taskbar on Win32 programs (easily remappable to function as <a href="https://github.com/srwi/EverythingToolbar">EverythingToolbar</a>, perhaps maybe even more programs that support hotkeys), or on supported Metro apps, brings their Search charm.<br />
 <b>Share:</b> Opens the share charm.<br />
 <b>Start:</b> Opens the start menu/screen. If you are using <a href="https://github.com/Open-Shell/Open-Shell-Menu">Open-Shell</a>, you can remap this button to open up their start menu instead or to completely disable its functionality.<br />
-<b>Devices:</b> Opens the Connect charm.<br />
+<b>Devices:</b> Opens the Connect charm. On supported Metro apps, they will open the print dialog.<br />
 <b>Settings:</b> Opens the Settings Metro app on Win32 programs or the Settings charm on supported Metro apps.
 
 ## Requirements
@@ -63,13 +63,14 @@ On touch screens, swipe from the right edge towards to bring up the Charms bar. 
 
 ## Screenshots
 <img src="resource/preview.png"/>
+<img src="resource/previewhighcontrast.png"/>
 
 ## Download
 Downloads are coming soon in the near future
 
 ## Q&As
 Q: Are forked repositories the complete edition of Charms Bar Port?<br />
-A: No. They are DEVELOPER builds, as the developer builds are not meant to be used as final products.
+A: No. They are DEVELOPER builds, as the developer builds are not meant to be used as final products. Charms Bar Port's official release may take some time when I fix every problem associated with it.
 <br />
 <br />
 Q: How can I disable the Charms Bar hot corners without closing the program?<br />
@@ -123,12 +124,12 @@ Q: I'm trying to ALT+F4 the program but it won't let me. Why?<br />
 A: This was meant to fix a crash bug. Use Task Manager if you want to stop the program.
 <br />
 <br />
-Q: When I open the Start menu in Windows 10 the charms clock is not visible, why is that?<br />
-A: This is an issue I cannot fix without embedding it into Explorer itself or signing a certificate.
+Q: Why is it lagging on my machine?<br />
+A: The network icon in the Charms Clock uses the command prompt to receive network information. I'm still trying to improve performance of the program.
 <br />
 <br />
 Q: Can I fork this repository to release your work now?<br />
-A: No. You can only fork it to make changes and released developer builds are not to be used for local purposes.
+A: No. You can only fork it to make changes and released developer builds are not to be used for local purposes. There will be bugs on your repository and isn't stable for personal use yet.
 <br />
 <br />
 Q: I have found a bug. Can you fix it?<br />
@@ -143,4 +144,19 @@ Q: How can I contact you?<br />
 A: You can <a href="mailto:jaydenwmontoya@icloud.com">email me</a> for any assistance regarding Charms Bar Port and other products I have created.
 
 ## DISCLAIMER !!
-I'm not officially affiliated with Microsoft; I moved to Mac OS X a few years ago for better stability and UI, and have temporarily returned to Windows 10 for better performance using web development with the announcement of macOS Sonoma until I get a modern MacBook Pro. I will still be using Mac OS X as a daily driver, so there may not be enough focus given to Charms Bar Port.
+I'm not officially affiliated with Microsoft; I moved to Mac OS X in March 3rd of 2017 for better stability and UI, and have temporarily returned to Windows 10 for better performance using web development with the announcement of macOS Sonoma until I get a modern MacBook Pro. I will still be using Mac OS X as a daily driver, so there may not be enough focus given to Charms Bar Port.
+
+## Support
+Are you a fan of the Charms Bar Port prorgam and want to help out? here are some options..
+
+#### Programmer
+Code contributions are welcome. If you are able to port Windows 8.1 features better than I can, or if you want to improve some features (especially multi-monitor support), please <a href="mailto:jaydenwmontoya@icloud.com">email me</a>.
+
+#### Localization
+Help translate Charms Bar Port to more languages. If there's a language that isn't present in Charms Bar Port please <a href="mailto:jaydenwmontoya@icloud.com">email me</a>.
+
+#### Suggestions & Bug report
+Suggest new features or file bug reports to improve Charms Bar Port, [learn more..](https://github.com/Icepenguins101/charms-bar-port/issues)
+
+#### Spread the word
+Star this repository, leave a review of the program anywhere on your website or share it to others that want the Windows 8.x experience back.
