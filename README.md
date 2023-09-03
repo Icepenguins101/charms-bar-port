@@ -132,10 +132,6 @@ Q: Can I fork this repository to release your work now?<br />
 A: No. You can only fork it to make changes and released developer builds are not to be used for local purposes. There will be bugs on your repository and isn't stable for personal use yet.
 <br />
 <br />
-Q: I have found a bug. Can you fix it?<br />
-A: Report the problem under <a href="https://github.com/Icepenguins101/charms-bar-port/issues">the issues category</a>.
-<br />
-<br />
 Q: Will you do more ports from Windows 8.1?<br />
 A: I really would love to make more ports from Windows 8.1 as I'm considering to make an App Switcher and Start Screen ports, but I would really need assistance for the start screen port to replace the default Windows start menu (or screen, if you're in 10 with the "fullscreen Start" option switched on).
 <br />
@@ -155,7 +151,7 @@ Code contributions are welcome. If you are able to port Windows 8.1 features bet
 #### Localization
 Help translate Charms Bar Port to more languages. If there's a language that isn't present in Charms Bar Port please <a href="mailto:jaydenwmontoya@icloud.com">email me</a>.
 
-#### Suggestions & Bug report
+#### Suggestions & Bug Report
 Suggest new features or file bug reports to improve Charms Bar Port, [learn more..](https://github.com/Icepenguins101/charms-bar-port/issues)
 
 #### Spread the word
