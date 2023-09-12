@@ -133,6 +133,8 @@ namespace CharmsBarPort
             e.Request.Data.Properties.Description = " ";
             e.Request.Data.SetText(" ");
         }
+        public int rctLeft = 0;
+        public int rctTop = 0;
         public bool findDevices = false;
         public bool openSettings = false;
         public int findTimer = 0;
@@ -188,7 +190,7 @@ namespace CharmsBarPort
         public int charmsTimer = 0;
         public int charmsWait = 0;
         public bool WinCharmUse = false;
-        public int charmsDelay = 0;
+        public int charmsDelay = 100;
         public int myCharmsDelay = 100; // Desktop delay: you can customize the delay option through Regedit.
         public int charmsDelay2 = 100; // Metro delay: you can customize the delay option through Regedit.
         public int charmsReturn = 0; //to fix a problem where you can't swipe back in after it's gone
@@ -203,12 +205,13 @@ namespace CharmsBarPort
         public bool pokeCharms = false;
         public bool usingTouch = false;
         public bool isMetro = false; //Metro apps use their unique ways for stuff
-        //Fixing the issue where the icons stay in the "pressed" form when the mouse is not over them.
+        public bool isGui = false; //Fixing a problem where it appears behind the taskbar.
         public bool searchHover = false;
         public bool shareHover = false;
         public bool winHover = false;
         public bool devicesHover = false;
         public bool settingsHover = false;
+        public IntPtr mWnd = GetForegroundWindow();
 
         public bool searchActive = false;
         public bool shareActive = false;
@@ -322,6 +325,39 @@ namespace CharmsBarPort
         {
             e.Cancel = true;
         }
+
+private string GetActiveWindowTitle()
+{
+    const int nChars = 256;
+    StringBuilder Buff = new StringBuilder(nChars);
+    IntPtr handle = GetForegroundWindow();
+
+    if (GetWindowText(handle, Buff, nChars) > 0)
+    {
+        return Buff.ToString();
+    }
+    return null;
+}
+
+   [DllImport("user32.dll",CharSet=CharSet.Auto, CallingConvention=CallingConvention.StdCall)]
+   public static extern void mouse_event(uint dwFlags, uint dx, uint dy, uint cButtons, uint dwExtraInfo);
+   //Mouse actions
+   private const int MOUSEEVENTF_LEFTDOWN = 0x02;
+   private const int MOUSEEVENTF_LEFTUP = 0x04;
+   private const int MOUSEEVENTF_RIGHTDOWN = 0x08;
+   private const int MOUSEEVENTF_RIGHTUP = 0x10;
+
+        [DllImport("User32.dll")]
+        private static extern bool SetCursorPos(int X, int Y);
+
+        [DllImport("user32.dll", EntryPoint = "FindWindow", SetLastError = true)] 
+    static extern IntPtr FindWindow(string lpClassName, string lpWindowName); 
+    [DllImport("user32.dll", EntryPoint = "SendMessage", SetLastError = true)] 
+    static extern IntPtr SendMessage(IntPtr hWnd, Int32 Msg, IntPtr wParam, IntPtr lParam); 
+
+    const int WM_COMMAND = 0x111; 
+    const int MIN_ALL = 419; 
+    const int MIN_ALL_UNDO = 416; 
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern int GetSystemMetrics(int nIndex);
@@ -524,6 +560,18 @@ namespace CharmsBarPort
         private static extern int keybd_event(byte bVk, byte bScan, uint dwFlags, long dwExtraInfo);
 
         //for Metro Apps
+        [DllImport("user32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool GetWindowRect(IntPtr hWnd, ref RECT lpRect);
+        [StructLayout(LayoutKind.Sequential)]
+        private struct RECT
+        {
+            public int Left;
+            public int Top;
+            public int Right;
+            public int Bottom;
+        }
+
         [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
         static extern int GetClassName(IntPtr hWnd, StringBuilder lpClassName, int nMaxCount);
 
@@ -543,11 +591,43 @@ namespace CharmsBarPort
                 return false;
             }
         }
-        private void Search_MouseUp(object sender, MouseButtonEventArgs e)
+
+        private static bool isWinGui(IntPtr hWnd)
+        {
+            int nRet;
+            // Pre-allocate 256 characters, since this is the maximum class name length.
+            StringBuilder ClassName = new StringBuilder(256);
+            //Get the window class name
+            nRet = GetClassName(hWnd, ClassName, ClassName.Capacity);
+            if (nRet != 0)
+            {
+                return (string.Compare(ClassName.ToString(), "Windows.UI.Core.CoreWindow", true, CultureInfo.InvariantCulture) == 0);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private async void Search_MouseUp(object sender, MouseButtonEventArgs e)
         {
             if (isMetro == true)
             {
-                //soon...
+                RECT rct = new RECT();
+                GetWindowRect(mWnd, ref rct);
+                SetCursorPos(rctLeft + 21, rctTop + 14);
+
+                //perform click            
+                mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
+                await Task.Delay(333);
+                mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+                await Task.Delay(333);
+                byte sKey = (byte)KeyInterop.VirtualKeyFromKey(Key.S);
+                const uint KEYEVENTF_EXTENDEDKEY = 0x0001;
+                const uint KEYEVENTF_KEYUP = 0x0002;
+                _ = keybd_event(sKey, 0, KEYEVENTF_EXTENDEDKEY, 0);
+                await Task.Delay(100);
+                _ = keybd_event(sKey, 0, KEYEVENTF_KEYUP, 0);
             }
             else
             {
@@ -606,83 +686,92 @@ namespace CharmsBarPort
                 SettingsCharmInactive.Visibility = Visibility.Visible;
             }
         }
-        private void Share_MouseUp(object sender, RoutedEventArgs e)
+        private async void Share_MouseUp(object sender, RoutedEventArgs e)
         {
-            // Retrieve the window handle (HWND) of the current WinUI 3 window.
-            var hWnd = new WindowInteropHelper(this).Handle;
-            IDataTransferManagerInterop interop =
-            Windows.ApplicationModel.DataTransfer.DataTransferManager.As
-                <IDataTransferManagerInterop>();
-
-            IntPtr result = interop.GetForWindow(hWnd, _dtm_iid);
-            var dataTransferManager = WinRT.MarshalInterface
-                <Windows.ApplicationModel.DataTransfer.DataTransferManager>.FromAbi(result);
-
-            dataTransferManager.DataRequested += (sender, args) =>
+            if (isMetro == true)
             {
-                args.Request.Data.Properties.Title = " ";
-                args.Request.Data.SetText("WinRT.Interop.WindowNative.GetWindowHandle(this)");
-                args.Request.Data.RequestedOperation =
-                    Windows.ApplicationModel.DataTransfer.DataPackageOperation.Copy;
-            };
+                RECT rct = new RECT();
+                GetWindowRect(mWnd, ref rct);
+                SetCursorPos(rctLeft + 21, rctTop + 14);
 
-            if (this.IsActive == true)
-            {
-                interop.ShowShareUIForWindow(hWnd);
-            }
-
-            /* the old Share charm behavior chose to take a screenshot - this has been removed
-                byte printScreenKey = (byte)KeyInterop.VirtualKeyFromKey(Key.PrintScreen);
+                //perform click            
+                mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
+                await Task.Delay(333);
+                mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+                await Task.Delay(333);
+                byte hKey = (byte)KeyInterop.VirtualKeyFromKey(Key.H);
                 const uint KEYEVENTF_EXTENDEDKEY = 0x0001;
                 const uint KEYEVENTF_KEYUP = 0x0002;
+                _ = keybd_event(hKey, 0, KEYEVENTF_EXTENDEDKEY, 0);
+                await Task.Delay(100);
+                _ = keybd_event(hKey, 0, KEYEVENTF_KEYUP, 0);
+            }
+            else
+            {
+                var hWnd = new WindowInteropHelper(this).Handle;
+                IDataTransferManagerInterop interop =
+                Windows.ApplicationModel.DataTransfer.DataTransferManager.As
+                    <IDataTransferManagerInterop>();
+
+                IntPtr result = interop.GetForWindow(hWnd, _dtm_iid);
+                var dataTransferManager = WinRT.MarshalInterface
+                    <Windows.ApplicationModel.DataTransfer.DataTransferManager>.FromAbi(result);
+
+                dataTransferManager.DataRequested += (sender, args) =>
+                {
+                    args.Request.Data.Properties.Title = " ";
+                    args.Request.Data.SetText("WinRT.Interop.WindowNative.GetWindowHandle(this)");
+                    args.Request.Data.RequestedOperation =
+                        Windows.ApplicationModel.DataTransfer.DataPackageOperation.Copy;
+                };
+
                 if (this.IsActive == true)
                 {
-                    _ = keybd_event(printScreenKey, 0, KEYEVENTF_EXTENDEDKEY, 0);
-                    _ = keybd_event(printScreenKey, 0, KEYEVENTF_KEYUP, 0);
+                    interop.ShowShareUIForWindow(hWnd);
                 }
-            */
 
-            swipeIn = false;
-            keyboardShortcut = false;
-            charmsAppear = false;
-            charmsUse = false;
-            charmsActivate = false;
-            pokeCharms = false;
+                swipeIn = false;
+                keyboardShortcut = false;
+                charmsAppear = false;
+                charmsUse = false;
+                charmsActivate = false;
+                pokeCharms = false;
 
-            if (useAnimations == false)
-            {
-                this.Opacity = 0.000;
-                CharmsClock.Opacity = 0.000;
+                if (useAnimations == false)
+                {
+                    this.Opacity = 0.000;
+                    CharmsClock.Opacity = 0.000;
 
-                var brush = (Brush)converter.ConvertFromString("#00111111");
-                Background = brush;
+                    var brush = (Brush)converter.ConvertFromString("#00111111");
+                    Background = brush;
+                }
+
+                mouseIn = false;
+
+                SearchDown.Visibility = Visibility.Hidden;
+                ShareDown.Visibility = Visibility.Hidden;
+                WinDown.Visibility = Visibility.Hidden;
+                DevicesDown.Visibility = Visibility.Hidden;
+                SettingsDown.Visibility = Visibility.Hidden;
+
+                SearchText.Visibility = Visibility.Hidden;
+                ShareText.Visibility = Visibility.Hidden;
+                WinText.Visibility = Visibility.Hidden;
+                DevicesText.Visibility = Visibility.Hidden;
+                SettingsText.Visibility = Visibility.Hidden;
+
+                SearchCharm.Visibility = Visibility.Hidden;
+                ShareCharm.Visibility = Visibility.Hidden;
+                MetroColor.Visibility = Visibility.Hidden;
+                DevicesCharm.Visibility = Visibility.Hidden;
+                SettingsCharm.Visibility = Visibility.Hidden;
+
+                SearchCharmInactive.Visibility = Visibility.Visible;
+                ShareCharmInactive.Visibility = Visibility.Visible;
+                NoColor.Visibility = Visibility.Visible;
+                DevicesCharmInactive.Visibility = Visibility.Visible;
+                SettingsCharmInactive.Visibility = Visibility.Visible;
             }
-
-            mouseIn = false;
-
-            SearchDown.Visibility = Visibility.Hidden;
-            ShareDown.Visibility = Visibility.Hidden;
-            WinDown.Visibility = Visibility.Hidden;
-            DevicesDown.Visibility = Visibility.Hidden;
-            SettingsDown.Visibility = Visibility.Hidden;
-
-            SearchText.Visibility = Visibility.Hidden;
-            ShareText.Visibility = Visibility.Hidden;
-            WinText.Visibility = Visibility.Hidden;
-            DevicesText.Visibility = Visibility.Hidden;
-            SettingsText.Visibility = Visibility.Hidden;
-
-            SearchCharm.Visibility = Visibility.Hidden;
-            ShareCharm.Visibility = Visibility.Hidden;
-            MetroColor.Visibility = Visibility.Hidden;
-            DevicesCharm.Visibility = Visibility.Hidden;
-            SettingsCharm.Visibility = Visibility.Hidden;
-
-            SearchCharmInactive.Visibility = Visibility.Visible;
-            ShareCharmInactive.Visibility = Visibility.Visible;
-            NoColor.Visibility = Visibility.Visible;
-            DevicesCharmInactive.Visibility = Visibility.Visible;
-            SettingsCharmInactive.Visibility = Visibility.Visible;
         }
 
         private void Win_MouseUp(object sender, MouseButtonEventArgs e)
@@ -793,11 +882,25 @@ namespace CharmsBarPort
             SettingsCharmInactive.Visibility = Visibility.Visible;
         }
 
-        private void Settings_MouseUp(object sender, MouseButtonEventArgs e)
+        private async void Settings_MouseUp(object sender, MouseButtonEventArgs e)
         {
             if (isMetro == true)
             {
-                //soon...
+                RECT rct = new RECT();
+                GetWindowRect(mWnd, ref rct);
+                SetCursorPos(rctLeft + 21, rctTop + 14);
+
+                //perform click            
+                mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
+                await Task.Delay(333);
+                mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+                await Task.Delay(333);
+                byte tKey = (byte)KeyInterop.VirtualKeyFromKey(Key.T);
+                const uint KEYEVENTF_EXTENDEDKEY = 0x0001;
+                const uint KEYEVENTF_KEYUP = 0x0002;
+                _ = keybd_event(tKey, 0, KEYEVENTF_EXTENDEDKEY, 0);
+                await Task.Delay(100);
+                _ = keybd_event(tKey, 0, KEYEVENTF_KEYUP, 0);
             }
             else
             {
@@ -868,13 +971,28 @@ namespace CharmsBarPort
                         ActiveWindow.Content = handle.ToString();
                         charmsDelay = charmsDelay2;
                         isMetro = true;
+                        isGui = false;
                     }
-                    else
-                    {
-                        ActiveWindow.Content = handle.ToString();
-                        charmsDelay = myCharmsDelay;
-                        isMetro = false;
-                    }
+                else if (isWinGui(handle) == true)
+                {
+                    ActiveWindow.Content = handle.ToString();
+                    charmsDelay = charmsDelay2;
+                    isMetro = false;
+                    isGui = true;
+                }
+                else
+                {
+                    ActiveWindow.Content = handle.ToString();
+                    charmsDelay = myCharmsDelay;
+                    isMetro = false;
+                    isGui = false;
+                }
+                }
+
+                if (this.IsActive == true)
+                {
+                    IntPtr handle = GetForegroundWindow();
+                    ActiveCharm.Content = handle.ToString();
                 }
 
                 if (IHOb > 0.001 && IHOb < 0.092)
@@ -899,8 +1017,17 @@ namespace CharmsBarPort
                         string noDevices = key.GetValue("DisableDevicesCharm", -1, RegistryValueOptions.None).ToString(); //this is not in Windows 8.1
                         string noSettings = key.GetValue("DisableSettingsCharm", -1, RegistryValueOptions.None).ToString(); //this is not in Windows 8.1, but used to replicate the Windows 10 beta design WITHOUT Settings
                         string noClock = key.GetValue("DisableCharmsClock", -1, RegistryValueOptions.None).ToString(); //this is not in Windows 8.1, but used to remove the Charms Clock
-                        string noFade = key.GetValue("DisableStartFade", -1, RegistryValueOptions.None).ToString(); //in Windows 8.1 animations must be disabled to do the trick, but here it's used to remove the fading effect of the start charm whilst keeping the Charms Bar animations                                                                  // get value 
+                        string noFade = key.GetValue("DisableStartFade", -1, RegistryValueOptions.None).ToString(); //in Windows 8.1 animations must be disabled to do the trick, but here it's used to remove the fading effect of the start charm whilst keeping the Charms Bar animations.
                         string charmMenuUse = key.GetValue("EnableCharmsMenu", -1, RegistryValueOptions.None).ToString(); //this is not in Windows 8.1, but used to remove the Charms Clock
+
+                            if (noClock == "-1")
+                            {
+                                noClocks.Content = "0";
+                            }
+                            else
+                            {
+                                noClocks.Content = noClock;
+                            }
 
                         if (charmMenuUse == "-1")
                         {
@@ -911,7 +1038,25 @@ namespace CharmsBarPort
                             useMenu.Content = charmMenuUse;
                         }
 
-                    if (charmsAppear == true && charmsUse == false)
+                            if (m == "-1")
+                            {
+                                vn.Content = "0";
+                            }
+                            else
+                            {
+                                vn.Content = m;
+
+                            }
+                            if (n == "-1")
+                            {
+                                vn2.Content = "0";
+                            }
+                            else
+                            {
+                                vn2.Content = n;
+                            }
+
+                        if (IHOb < 0.02 && charmsUse == false)
                         {
                             if (noCharms != "0" && noCharms != "-1")
                             {
@@ -946,24 +1091,6 @@ namespace CharmsBarPort
                                 {
                                     SettingsCharmInactive.Visibility = Visibility.Visible;
                                 }
-                            }
-
-                            if (m == "-1")
-                            {
-                                vn.Content = "0";
-                            }
-                            else
-                            {
-                                vn.Content = m;
-
-                            }
-                            if (n == "-1")
-                            {
-                                vn2.Content = "0";
-                            }
-                            else
-                            {
-                                vn2.Content = n;
                             }
 
                             if (noSettings == "-1")
@@ -1009,15 +1136,6 @@ namespace CharmsBarPort
                             else
                             {
                                 vn7.Content = noWin;
-                            }
-
-                            if (noClock == "-1")
-                            {
-                                noClocks.Content = "0";
-                            }
-                            else
-                            {
-                                noClocks.Content = noClock;
                             }
 
                             if (noFade == "-1")
@@ -1048,20 +1166,22 @@ namespace CharmsBarPort
                             }
                         }
                         key.Close();
-                    } else {
+                    }
+                    else
+                    {
                         string m = "0";
                         string n = "0";
-                        string customDelay =  "-1";
-                        string customDelay2 =  "-1";
-                        string noCharms =  "0";
-                        string noSearch =  "0";
+                        string customDelay = "-1";
+                        string customDelay2 = "-1";
+                        string noCharms = "0";
+                        string noSearch = "0";
                         string noShare = "0";
-                        string noWin =  "0";
-                        string noDevices =  "0";
-                        string noSettings =  "0";
-                        string noClock =  "0";
-                        string noFade =  "0";
-                        string charmMenuUse =  "0";
+                        string noWin = "0";
+                        string noDevices = "0";
+                        string noSettings = "0";
+                        string noClock = "0";
+                        string noFade = "0";
+                        string charmMenuUse = "0";
 
                         if (charmMenuUse == "-1")
                         {
@@ -1072,7 +1192,7 @@ namespace CharmsBarPort
                             useMenu.Content = charmMenuUse;
                         }
 
-                    if (charmsAppear == true && charmsUse == false)
+                        if (IHOb < 0.02 && charmsUse == false)
                         {
                             if (noCharms != "0" && noCharms != "-1")
                             {
@@ -1107,24 +1227,6 @@ namespace CharmsBarPort
                                 {
                                     SettingsCharmInactive.Visibility = Visibility.Visible;
                                 }
-                            }
-
-                            if (m == "-1")
-                            {
-                                vn.Content = "0";
-                            }
-                            else
-                            {
-                                vn.Content = m;
-
-                            }
-                            if (n == "-1")
-                            {
-                                vn2.Content = "0";
-                            }
-                            else
-                            {
-                                vn2.Content = n;
                             }
 
                             if (noSettings == "-1")
@@ -1189,8 +1291,8 @@ namespace CharmsBarPort
                             {
                                 noFades.Content = noFade;
                             }
-                                myCharmsDelay = 100;
-                                charmsDelay2 = 100;
+                            myCharmsDelay = 100;
+                            charmsDelay2 = 100;
                         }
                     }
                 }
@@ -1527,7 +1629,7 @@ namespace CharmsBarPort
                     elevenX = 0;
                 }
 
-//                if (IHOb < 0.012)
+                //                if (IHOb < 0.012)
                 if (charmsMenuOpen == false)
                 {
                     if (activeScreen == 0)
@@ -1542,7 +1644,7 @@ namespace CharmsBarPort
                             this.Left = mainwidth - 86;
                         }
 
-                        if (mainheight > 600-1)
+                        if (mainheight > 600 - 1)
                         {
                             this.Height = mainheight;
                             this.Top = 0;
@@ -1822,7 +1924,7 @@ namespace CharmsBarPort
                         {
                             this.Left = screenwidth - 86;
                         }
-                        if (screenheight > 600-1)
+                        if (screenheight > 600 - 1)
                         {
                             this.Height = Screen.AllScreens[activeScreen].Bounds.Height;
                             this.Top = Screen.AllScreens[activeScreen].Bounds.Top;
@@ -2033,15 +2135,15 @@ namespace CharmsBarPort
                     this.Activate();
                 }
 
-                if (charmsUse == false)
-                {
-                    CharmBG.Opacity = 0.000;
-                    CharmBG.Visibility = Visibility.Hidden;
-                }
-                else
-                {
-                    CharmBG.Visibility = Visibility.Visible;
-                }
+                    if (charmsUse == false)
+                    {
+                        CharmBG.Opacity = 0.000;
+                        CharmBG.Visibility = Visibility.Hidden;
+                    }
+                    else
+                    {
+                        CharmBG.Visibility = Visibility.Visible;
+                    }
 
                 //finally, a new solution to making the charms bar less hostile!
                 if (preventReload == true)
@@ -2908,7 +3010,6 @@ namespace CharmsBarPort
                     }
                     if (charmsUse == true)
                     {
-                        //Contained inside to stop those really annoying glitches.
                         if (Keyboard.IsKeyDown(Key.Enter) && keyboardShortcut == true || Keyboard.IsKeyDown(Key.Space) && keyboardShortcut == true)
                         {
                             if (activeIcon == 0)
@@ -3780,14 +3881,18 @@ namespace CharmsBarPort
                 //FIX!!!
                 if (charmsAppear == true && charmsUse == true)
                 {
-                    if (SystemParameters.HighContrast == false)
+                    if (activeScreen != 0)
                     {
-                        var brush = (Brush)converter.ConvertFromString("#ff111111");
-                        Background = brush;
-                    }
-                    else
-                    {
-                        Background = SystemColors.WindowBrush;
+                        if (SystemParameters.HighContrast == false)
+                        {
+                            var brush = (Brush)converter.ConvertFromString("#ff111111");
+                            Background = brush;
+                        }
+                        else
+                        {
+                            Background = SystemColors.WindowBrush;
+                        }
+                        this.Opacity = IHOb;
                     }
 
                     mouseIn = false;
@@ -4413,6 +4518,50 @@ namespace CharmsBarPort
                     SettingsText.Foreground = SystemColors.WindowTextBrush;
                 }
 
+//fixes for the Windows shell
+
+                if (this.IsActive == false && charmsUse == true && isGui == true)
+                    {
+                                byte escKey = (byte)KeyInterop.VirtualKeyFromKey(Key.Escape);
+                                const uint KEYEVENTF_EXTENDEDKEY = 0x0001;
+                                const uint KEYEVENTF_KEYUP = 0x0002;
+                                _ = keybd_event(escKey, 0, KEYEVENTF_EXTENDEDKEY, 0);
+                                _ = keybd_event(escKey, 0, KEYEVENTF_KEYUP, 0);
+
+        IntPtr lHwnd = FindWindow("Shell_TrayWnd", null);
+        SendMessage(lHwnd, WM_COMMAND, (IntPtr)MIN_ALL, IntPtr.Zero);  
+        System.Threading.Thread.Sleep(700); //Hopefully, this will fix the bug.
+        SendMessage(lHwnd, WM_COMMAND, (IntPtr)MIN_ALL_UNDO, IntPtr.Zero); 
+
+                    SetForegroundWindow(Int32.Parse(ActiveCharm.Content.ToString()));
+                    this.Focus();
+                    this.Activate();
+                    this.BringIntoView();
+                    charmsUse = true;
+                    isGui = false;
+                }
+
+                //metro app interrogation.
+                if (isMetro == true && this.IsActive == false && CharmsClock.IsVisible == false)
+                {
+                    IntPtr mWnd = GetForegroundWindow();
+
+                    RECT rct = new RECT();
+                    GetWindowRect(mWnd, ref rct);
+
+                    rctTop = rct.Top;
+                    rctLeft = rct.Left;
+                }
+
+                if (isMetro == false && this.IsActive == false && CharmsClock.IsVisible == false)
+                {
+                    IntPtr mWnd = GetForegroundWindow();
+
+                    rctTop = 0;
+                    rctLeft = 0;
+                }
+
+                //End of Charms Bar Code
             }));
         }
         private void Charms_MouseMove(object sender, System.EventArgs e)
