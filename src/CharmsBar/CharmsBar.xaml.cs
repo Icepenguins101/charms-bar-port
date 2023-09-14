@@ -1475,7 +1475,12 @@ private string GetActiveWindowTitle()
                         CharmsMenu.Opacity = IHOb;
                         CharmsClock.Opacity = IHOb;
                         CharmsClock.Left = dispWidth - 527;
-                        CharmsClock.Show();
+
+                        if (noClocks.Content == "-1" || noClocks.Content == "0")
+                        {
+                            CharmsClock.Show();
+                        }
+
                         this.Left = -90;
                     }
 

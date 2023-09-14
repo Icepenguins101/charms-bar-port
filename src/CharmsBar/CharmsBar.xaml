@@ -8,7 +8,8 @@
 		Name="Charms"
         Title="Charms Bar"
         Top="0"
-
+        UseLayoutRounding="True"
+        SnapsToDevicePixels="True"
         Width="86"
         AllowsTransparency="True"
         Topmost="True"
@@ -17,7 +18,7 @@
         Icon="/Icon.png"
         ScrollViewer.VerticalScrollBarVisibility="Disabled">
 
-	<Grid Width="98" Height="Auto" Name="CharmsId" Background="#00111111" 
+	<Grid Width="98" Height="Auto" Background="#00111111" 
           UIElement.TouchUp="Charms_MouseUp" UIElement.TouchDown="Charms_MouseDown" UIElement.TouchMove="Charms_MouseMove" UIElement.TouchLeave="Charms_MouseLeave" UIElement.TouchEnter="Charms_MouseEnter"
           UIElement.MouseUp="Charms_MouseUp" UIElement.MouseDown="Charms_MouseDown" UIElement.MouseMove="Charms_MouseMove" UIElement.MouseLeave="Charms_MouseLeave" UIElement.MouseEnter="Charms_MouseEnter"
           UseLayoutRounding="True" SnapsToDevicePixels="True" Grid.ZIndex="999999922">
@@ -119,7 +120,9 @@
                 <Label Name="vn5" Content="0" Foreground="Transparent" Visibility="Hidden"></Label>
                 <Label Name="vn6" Content="0" Foreground="Transparent" Visibility="Hidden"></Label>
                 <Label Name="vn7" Content="0" Foreground="Transparent" Visibility="Hidden"></Label>
+
 				<Label Name="ActiveWindow" Content="0" Foreground="Transparent" Visibility="Hidden"></Label>
+				<Label Name="ActiveCharm" Content="0" Foreground="Transparent" Visibility="Hidden"></Label>
             </Grid>
 
             <Grid Name="NoColor" Background="#00000000" VerticalAlignment="Top" Width="50" Height="50" Margin="0,-50,12,4" Visibility="Visible">
