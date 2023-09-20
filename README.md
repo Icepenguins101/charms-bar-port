@@ -129,6 +129,10 @@ Q: Why is it lagging on my machine?<br />
 A: The network icon in the Charms Clock uses the command prompt to receive network information. I'm still trying to improve performance of the program.
 <br />
 <br />
+Q: Why is it flickering on my machine?<br />
+A: This is a hardware specific problem. I'm planning to outsource this program to another developer to see if they can fix this better than I can. If you want to assist, please <a href="mailto:jaydenwmontoya@icloud.com">email me</a>.
+<br />
+<br />
 Q: Can I fork this repository to release your work now?<br />
 A: No. You can only fork it to make changes and released developer builds are not to be used for local purposes. There will be bugs on your repository and isn't stable for personal use yet.
 <br />
@@ -144,7 +148,7 @@ A: You can <a href="mailto:jaydenwmontoya@icloud.com">email me</a> for any assis
 I'm not officially affiliated with Microsoft; I moved to Mac OS X in March 3rd of 2017 for better stability and UI, and have temporarily returned to Windows 10 for better performance using web development with the announcement of macOS Sonoma until I get a modern MacBook Pro. I will still be using Mac OS X as a daily driver, so there may not be enough focus given to Charms Bar Port.
 
 ## Support
-Are you a fan of the Charms Bar Port prorgam and want to help out? here are some options..
+Are you a fan of the Charms Bar Port prorgam and want to help out? here are some options...
 
 #### Programmer
 Code contributions are welcome. If you are able to port Windows 8.1 features better than I can, or if you want to improve some features (especially multi-monitor support), please <a href="mailto:jaydenwmontoya@icloud.com">email me</a>.
@@ -153,7 +157,7 @@ Code contributions are welcome. If you are able to port Windows 8.1 features bet
 Help translate Charms Bar Port to more languages. If there's a language that isn't present in Charms Bar Port please <a href="mailto:jaydenwmontoya@icloud.com">email me</a>.
 
 #### Suggestions & Bug Report
-Suggest new features or file bug reports to improve Charms Bar Port, [learn more..](https://github.com/Icepenguins101/charms-bar-port/issues)
+Suggest new features or file bug reports to improve Charms Bar Port, [learn more...](https://github.com/Icepenguins101/charms-bar-port/issues)
 
 #### Spread the word
 Star this repository, leave a review of the program anywhere on your website or share it to others that want the Windows 8.x experience back.
