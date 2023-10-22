@@ -61,9 +61,11 @@ On touch screens, swipe from the right edge towards to bring up the Charms bar. 
 * Engllish
 * German (Deutsch)
 * Japanese (日本語)
+* Russian (русский)
 
 ## Screenshots
 <img src="resource/preview.png"/>
+<img src="resource/previewdark.png"/>
 <img src="resource/previewhighcontrast.jpg"/>
 
 ## Download
