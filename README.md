@@ -12,6 +12,8 @@
 [![Documentation](https://img.shields.io/badge/Docs-WIP-red.svg)](https://github.com/Icepenguins101/charms-bar-port/wiki)
 [![Issues](https://img.shields.io/github/issues/Icepenguins101/charms-bar-port.svg)](https://github.com/Icepenguins101/charms-bar-port/issues)
 
+<b>The project is on hold until my computer can be fixed. It suffered a fault with the power button and it no longer holds charges. Development will resume once the computer is fixed.</b>
+
 ## About
 <b>Charms Bar Port</b> is the brand new solution for bringing back the Windows 8.x Charms bar to Windows 10 and Windows 11, using real files from Windows 8.x to enhance your Windows environment and relive the Windows 8.x days.
 
