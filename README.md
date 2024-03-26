@@ -1,7 +1,7 @@
 <p align="center">
 <img id="charmsbarPort" src="resource/logo.png"/>
 </p>
-
+<hr />
 <blockquote>
 "Your most unhappy customers are your greatest source of learning."<br />-Bill Gates
 </blockquote>
@@ -12,23 +12,33 @@
 [![Documentation](https://img.shields.io/badge/Docs-WIP-red.svg)](https://github.com/Icepenguins101/charms-bar-port/wiki)
 [![Issues](https://img.shields.io/github/issues/Icepenguins101/charms-bar-port.svg)](https://github.com/Icepenguins101/charms-bar-port/issues)
 
-<b>The project is on hold until my computer can be fixed. It suffered a fault with the power button and it no longer holds charges. Development will resume once the computer is fixed.</b>
+<b>The project is on hold until April, so it will only receive hotfixes until I get my PC back.</b>
 
+## Contents
+- [About](#about)
+- [Why was this created?](#why-was-this-created)
+- [How does it work?](#how-does-it-work)
+- [Requirements](#requirements)
+- [Features](#features)
+- [Supported languages](#supported-languages)
+- [Screenshots](#screenshots)
+- [Q&As](#qas)
+- [Disclamer](#disclaimer)
+- [Support](#support)
+- 
 ## About
-<b>Charms Bar Port</b> is the brand new solution for bringing back the Windows 8.x Charms bar to Windows 10 and Windows 11, using real files from Windows 8.x to enhance your Windows environment and relive the Windows 8.x days.
+<b>Charms Bar Port</b> will help you bring back the Windows 8.x Charms Bar to Windows 10 and Windows 11, using real files from Windows 8.x to enhance your Windows environment and relive the Windows 8.x days. As the name suggests, it's a 1/1 conversion of the infamous Charms Bar with new features and hotfixes from the original.
 
-Forked and completely edited from <a href="https://github.com/Jerhynh/CharmsBarRevived">CharmsBarRevived</a>, <b>Charms Bar Port</b> will assist on helping you transition to Windows 10 and 11 without having to keep on the obsolete system forever.
-
-Are you a Charms Bar fan and tired of not having it in Windows 10/11? This is your solution... 
+Forked and completely edited from <a href="https://github.com/Jerhynh/CharmsBarRevived">CharmsBarRevived</a>, <b>Charms Bar Port</b> will assist on helping any Charms Bar fan make the jump from Windows 8.1 to Windows 10 or Windows 11, without having to stay on the obsolete operating system forever...
 
 ## Why was this created?
-As you may know, Microsoft made the annoucement to completely kill off the Charms Bar in Windows 10 in December 17, 2014 and upon release. There used to be vague ways to restore it in the old days using ValiiNet Charms, PopCharms, RocketDock, etc.
+As you may already know, Microsoft made the annoucement to completely kill off the Charms Bar in Windows 10 in December 17, 2014. There used to be vague ways to restore it in the old days using ValiiNet Charms, PopCharms, RocketDock, etc.
 
 
 ValiNet Charms as of 2023 is no longer available to download, PopCharms was only meant to be used between Windows 10 build 9780 and Windows 10 build 9913, and RocketDock is <b>very</b> outdated, so I created this project primarily to bring my needs of a Charms Bar back.
 
 ## How does it work?
-On touch screens, swipe from the right edge towards to bring up the Charms bar. If you're a mouse user, swipe to the top right corner and drag your cursor down to open the Charms bar. You can also use the keyboard shortcut Windows key + C, just like it was on Windows 8.x. Included in the Charms Bar are:
+On touch screens, swipe from the right edge towards to bring up the Charms Bar. If you're a mouse user, swipe to the top right corner and drag your cursor down to open the Charms Bar. You can also use the keyboard shortcut Windows key + C, just like it was on Windows 8.x. Included in the Charms Bar are:
 <br />
 <br />
 <b>Search:</b> Opens the search bar from the taskbar on Win32 programs (easily remappable to function as <a href="https://github.com/srwi/EverythingToolbar">EverythingToolbar</a>, perhaps maybe even more programs that support hotkeys), or on supported Metro apps, brings their Search charm.<br />
@@ -61,9 +71,10 @@ On touch screens, swipe from the right edge towards to bring up the Charms bar. 
 
 ## Supported languages
 * Engllish
-* German (Deutsch)
-* Japanese (日本語)
-* Russian (русский)
+* German (Deutsch) (will be added in the next major update)
+* Japanese (日本語) (will be added in the next major update)
+* Russian (русский) (will be added in the next major update)
+* Portuguese (Português) (will be added in the next major update)
 
 ## Screenshots
 <img src="resource/preview.png"/>
@@ -145,11 +156,15 @@ Q: Will you do more ports from Windows 8.1?<br />
 A: I really would love to make more ports from Windows 8.1 as I'm considering to make an App Switcher and Start Screen ports, but I would really need assistance for the start screen port to replace the default Windows start menu (or screen, if you're in 10 with the "fullscreen Start" option switched on).
 <br />
 <br />
+Q: Will there be a version for Mac OS X and Linux?<br />
+A: <b>No.</b> Microsoft owns full ownership of the charms bar and it would be infringement to create Charms Bar Port on those systems.
+<br />
+<br />
 Q: How can I contact you?<br />
 A: You can <a href="mailto:jaydenwmontoya@icloud.com">email me</a> for any assistance regarding Charms Bar Port and other products I have created.
 
-## DISCLAIMER !!
-I'm not officially affiliated with Microsoft; I moved to Mac OS X in March 3rd of 2017 for better stability and UI, and have temporarily returned to Windows 10 for better performance using web development with the announcement of macOS Sonoma until I get a modern MacBook Pro. I will still be using Mac OS X as a daily driver, so there may not be enough focus given to Charms Bar Port.
+## Disclaimer
+I'm not officially affiliated with Microsoft; I moved to Mac OS X in March 3rd of 2017 for better stability and UI, and have temporarily returned to Windows 10 for better performance using web development with the announcement of macOS Sonoma. I will still be using Mac OS X as a daily driver, so there may not be enough focus given to Charms Bar Port.
 
 ## Support
 Are you a fan of the Charms Bar Port prorgam and want to help out? here are some options...
@@ -164,4 +179,4 @@ Help translate Charms Bar Port to more languages. If there's a language that isn
 Suggest new features or file bug reports to improve Charms Bar Port, [learn more...](https://github.com/Icepenguins101/charms-bar-port/issues)
 
 #### Spread the word
-Star this repository, leave a review of the program anywhere on your website or share it to others that want the Windows 8.x experience back.
+Star this repository, leave a review of the program anywhere on your website or share it to others that want the Windows 8.x experience back!
