@@ -12,7 +12,7 @@
 [![Documentation](https://img.shields.io/badge/Docs-WIP-red.svg)](https://github.com/Icepenguins101/charms-bar-port/wiki)
 [![Issues](https://img.shields.io/github/issues/Icepenguins101/charms-bar-port.svg)](https://github.com/Icepenguins101/charms-bar-port/issues)
 
-<b>The project is on hold until April, so it will only receive hotfixes until I get my PC back.</b>
+<b>The project is on hold, so it will only receive hotfixes until I get my PC back.</b>
 
 ## Contents
 - [About](#about)
