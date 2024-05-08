@@ -3,7 +3,7 @@
 </p>
 <hr />
 <blockquote>
-"Your most unhappy customers are your greatest source of learning."<br />-Bill Gates
+"Your most unhappy customers are your greatest source of learning."<br />—Bill Gates
 </blockquote>
 
 [![GitHub release](https://img.shields.io/github/release/Icepenguins101/charms-bar-port/all.svg)](https://github.com/Icepenguins101/charms-bar-port/releases)
@@ -12,7 +12,7 @@
 [![Documentation](https://img.shields.io/badge/Docs-WIP-red.svg)](https://github.com/Icepenguins101/charms-bar-port/wiki)
 [![Issues](https://img.shields.io/github/issues/Icepenguins101/charms-bar-port.svg)](https://github.com/Icepenguins101/charms-bar-port/issues)
 
-<b>Charms Bar Port development will be delayed indefinitely until further notice and will not return until later this year.</b>
+<b>Charms Bar Port development will be delayed indefinitely until further notice and will not return until later this year. PC repairs are taking way too long than expected, so do not ask when this will be released as I have better things to do.</b>
 
 ## Contents
 - [About](#about)
@@ -61,7 +61,7 @@ On touch screens, swipe from the right edge towards to bring up the Charms Bar. 
 * Supports Windows 8.x-era registry hacks
 * Supports high contrast and light/dark mode preferences
 * Fully animated to emulate Windows 8.x (can be disabled in the OS settings)
-* Multi-monitor support (please read <a href="https://raw.githubusercontent.com/Icepenguins101/charms-bar-port/main/resource/helpwanted%2Ctxt">this</a>)
+* Multi-monitor support (please read <a href="https://raw.githubusercontent.com/Icepenguins101/charms-bar-port/main/resource/helpwanted.txt">this</a>)
 * Touch-friendly
 * Uses WinRT resources
 * Customizable panels (can be removed through the Registry Editor)
