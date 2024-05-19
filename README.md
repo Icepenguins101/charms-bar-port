@@ -12,7 +12,7 @@
 [![Documentation](https://img.shields.io/badge/Docs-WIP-red.svg)](https://github.com/Icepenguins101/charms-bar-port/wiki)
 [![Issues](https://img.shields.io/github/issues/Icepenguins101/charms-bar-port.svg)](https://github.com/Icepenguins101/charms-bar-port/issues)
 
-<b>Charms Bar Port development has been halted until further notice and will not return until later this year. PC repairs are taking way too long than expected, so do not ask when this will be released as I have better things to do. In the meantime, check out <a href="https://github.com/Icepenguins101/australis-theme-port">Australis Theme Port</a> instead.</b>
+<b>Charms Bar Port development has been halted until further notice and will not return until later this year. PC repairs are taking so long, that I cannot do anything about it, so do not ask when this will be released as I have better things to do. In the meantime, please check out <a href="https://github.com/Icepenguins101/australis-theme-port">Australis Theme Port</a> instead, this project is a holdover until I receive my PC back. Please stay up to date on my Facebook or Instagram for any updates about my PC.</b>
 
 ## Contents
 - [About](#about)
@@ -70,7 +70,7 @@ On touch screens, swipe from the right edge towards to bring up the Charms Bar. 
 * Switch between Win32 and Metro mode for the currently-focused program.
 
 ## Supported languages
-* Engllish
+* English
 * German (Deutsch) (will be added in the next major update)
 * Japanese (日本語) (will be added in the next major update)
 * Russian (русский) (will be added in the next major update)
