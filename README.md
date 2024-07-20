@@ -1,9 +1,21 @@
+⚠️ <b>IMPORTANT NOTICE !!</b><br />
+After a physical computer damage accident in May 2023 worsening all the way to November 2023, the power button quit working, and as a result, Charms Bar Port development had to be halted indefinitely and it still is in the state of a possibility it will never be picked up again. Since PC repairs are taking over a year, to the point that I cannot do anything about it, I would like to have you <b>NOT</b> ask when this will be released as I have better things to do.
+
+
+For now, I am stuck with a Mac and in the meantime, please check out <a href="https://github.com/Icepenguins101/australis-theme-port">Australis Theme Port</a> for Mozilla Firefox instead of this project. Australis Theme Port is a holdover until I receive my PC back. Please stay up to date on my <a href="https://www.facebook.com/jayden.montoya">Facebook</href> or <a href="https://www.instagram.com/jaydenwmontoya/">Instagram</a> for the latest updates on when Charms Bar Port will resume. 
+
+
+Please hope that the computer repair fees wouldn't be too large, otherwise I may have to sue Jack Dorsey for discrimination.
+
+Thank you for your patience. May Windows 8.1 live in your hearts and memory.
+
+<hr />
 <p align="center">
 <img id="charmsbarPort" src="resource/logo.png"/>
 </p>
 <hr />
 <blockquote>
-"Your most unhappy customers are your greatest source of learning."<br />—Bill Gates
+"Your most unhappy customers are your greatest source of learning."<br />— Bill Gates
 </blockquote>
 
 [![GitHub release](https://img.shields.io/github/release/Icepenguins101/charms-bar-port/all.svg)](https://github.com/Icepenguins101/charms-bar-port/releases)
@@ -11,8 +23,6 @@
 [![GitHub stars](https://img.shields.io/github/stars/Icepenguins101/charms-bar-port.svg)](https://github.com/Icepenguins101/charms-bar-port/stargazers)
 [![Documentation](https://img.shields.io/badge/Docs-WIP-red.svg)](https://github.com/Icepenguins101/charms-bar-port/wiki)
 [![Issues](https://img.shields.io/github/issues/Icepenguins101/charms-bar-port.svg)](https://github.com/Icepenguins101/charms-bar-port/issues)
-
-<b>Charms Bar Port development has been halted until further notice and will not return until later this year. PC repairs are taking so long, that I cannot do anything about it, so do not ask when this will be released as I have better things to do. In the meantime, please check out <a href="https://github.com/Icepenguins101/australis-theme-port">Australis Theme Port</a> instead, this project is a holdover until I receive my PC back. Please stay up to date on my Facebook or Instagram for any updates about my PC.</b>
 
 ## Contents
 - [About](#about)
