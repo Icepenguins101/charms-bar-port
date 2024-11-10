@@ -372,7 +372,9 @@
 	<ItemGroup>
 		<PackageReference Include="System.Runtime" Version="4.3.1" />
 		<PackageReference Include="System.Runtime.InteropServices" Version="4.3.0" />
-		<PackageReference Include="System.Runtime.InteropServices.WindowsRuntime" Version="4.3.0" />
+		<PackageReference Include="System.Runtime.InteropServices.WindowsRuntime" Version="4.3.0">
+		  <Aliases>SystemRTAlias</Aliases>
+		</PackageReference>
 	</ItemGroup>
 
 	<ItemGroup>
