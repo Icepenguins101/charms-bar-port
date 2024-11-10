@@ -109,6 +109,7 @@
         },
         "compile": {
           "ref/netstandard1.0/System.Runtime.InteropServices.WindowsRuntime.dll": {
+            "aliases": "SystemRTAlias",
             "related": ".xml"
           }
         },
@@ -823,19 +824,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kirby\\.nuget\\packages\\": {}
+    "C:\\Users\\cpasc\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Windows 8 Charms Bar for 10\\src\\CharmsBar\\Charms Bar Port.csproj",
+      "projectUniqueName": "C:\\Users\\cpasc\\Sources\\Repos\\charms-bar-port\\src\\CharmsBar\\Charms Bar Port.csproj",
       "projectName": "Charms Bar Port",
-      "projectPath": "D:\\Windows 8 Charms Bar for 10\\src\\CharmsBar\\Charms Bar Port.csproj",
-      "packagesPath": "C:\\Users\\kirby\\.nuget\\packages\\",
-      "outputPath": "D:\\Windows 8 Charms Bar for 10\\src\\CharmsBar\\obj\\",
+      "projectPath": "C:\\Users\\cpasc\\Sources\\Repos\\charms-bar-port\\src\\CharmsBar\\Charms Bar Port.csproj",
+      "packagesPath": "C:\\Users\\cpasc\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\cpasc\\Sources\\Repos\\charms-bar-port\\src\\CharmsBar\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\kirby\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\cpasc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -855,6 +861,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -871,7 +882,8 @@
           },
           "System.Runtime.InteropServices.WindowsRuntime": {
             "target": "Package",
-            "version": "[4.3.0, )"
+            "version": "[4.3.0, )",
+            "aliases": "SystemRTAlias"
           }
         },
         "imports": [
@@ -887,8 +899,24 @@
         "warn": true,
         "downloadDependencies": [
           {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[7.0.20, 7.0.20]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[7.0.20, 7.0.20]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[7.0.20, 7.0.20]"
+          },
+          {
             "name": "Microsoft.Windows.SDK.NET.Ref",
-            "version": "[10.0.17763.28, 10.0.17763.28]"
+            "version": "[10.0.17763.43, 10.0.17763.43]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[7.0.20, 7.0.20]"
           }
         ],
         "frameworkReferences": {
@@ -902,7 +930,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

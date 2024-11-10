@@ -1,4 +1,6 @@
-﻿using System;
+﻿extern alias SystemRTAlias;
+
+using System;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel.DataTransfer;
@@ -21,7 +23,7 @@ namespace NativeCode
         {
 			//TODO: Add a check for failure here. This will fail for versions of Windows
 			//below Windows 10
-			IActivationFactory factory = WindowsRuntimeMarshal.GetActivationFactory(typeof(DataTransferManager));
+			SystemRTAlias::System.Runtime.InteropServices.WindowsRuntime.IActivationFactory factory = SystemRTAlias::System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeMarshal.GetActivationFactory(typeof(DataTransferManager));
 
             interop = (IDataTransferManagerInterOp)factory;
 
