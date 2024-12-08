@@ -66,18 +66,17 @@ On touch screens, swipe from the right edge towards to bring up the Charms Bar. 
 * Based on Windows 8.1 Update 3
 * Formatting-aware (uses the OS' time and date formats. If you are using 24-hour and/or date formats like "MM/DD/YYYY", Charms Bar Port will use that format. Custom formats not supported yet)
 * Language-aware (automatically switches depending on your OS language)
-* Includes accent colors
-* Network/battery status included
-* Supports Windows 8.x-era registry hacks
+* Uses accent colors from your system
+* Network and battery status icons included
+* Supports Windows 8.x-era registry keys
 * Supports high contrast and light/dark mode preferences
 * Fully animated to emulate Windows 8.x (can be disabled in the OS settings)
 * Multi-monitor support (please read <a href="https://raw.githubusercontent.com/Icepenguins101/charms-bar-port/main/resource/helpwanted.txt">this</a>)
 * Touch-friendly
-* Uses WinRT resources
 * Customizable panels (can be removed through the Registry Editor)
 * Fully designable: includes a Windows 7 Metro concept, Windows 8 Developer Preview, Windows 8.1 Update 3, Windows 11 Metro concept and Windows 11 Fluent concept styles by default, or you can define your custom theme instead.
 * Pin anything to the Charms Bar for easy access
-* Switch between Win32 and Metro mode for the currently-focused program.
+* Switch between Win32 and Metro modes for the currently-focused program
 
 ## Supported languages
 * English
@@ -177,7 +176,7 @@ A: You can <a href="mailto:jaydenwmontoya@icloud.com">email me</a> for any assis
 I'm not officially affiliated with Microsoft; I moved to Mac OS X in March 3rd of 2017 for better stability and UI, and have temporarily returned to Windows 10 for better performance using web development with the announcement of macOS Sonoma. I will still be using Mac OS X as a daily driver, so there may not be enough focus given to Charms Bar Port.
 
 ## Support
-Are you a fan of the Charms Bar Port prorgam and want to help out? here are some options...
+Are you a fan of the Charms Bar Port program and want to help out? here are some options...
 
 #### Programmer
 Code contributions are welcome. If you are able to port Windows 8.1 features better than I can, or if you want to improve some features (especially multi-monitor support), please <a href="mailto:jaydenwmontoya@icloud.com">email me</a>.
