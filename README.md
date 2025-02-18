@@ -1,13 +1,11 @@
 ⚠️ <b>IMPORTANT NOTICE !!</b><br />
-After a physical computer damage accident in May 2023 worsening all the way to November 2023, the power button quit working, and as a result, Charms Bar Port development had to be halted indefinitely and it still is in the state of a possibility it will never be picked up again. Since PC repairs are taking over a year, to the point that I cannot do anything about it, I would like to have you <b>NOT</b> ask when this will be released as I have better things to do.
+After a physical computer damage accident happened in May 2023 worsening all the way to November 2023 to where the power button quit working and the screen hinge got disconnected, Charms Bar Port development sadly was forced to be halted from that point forward.
 
+For now, I am stuck with a Mac, and I cannot provide any upgrades aside from requests of the current build of Charms Bar Port. In the meantime, please check out <a href="https://github.com/Icepenguins101/australis-theme-port">Australis Theme Port for Mozilla Firefox</a>, <a href="https://bloodstreamscorporation.blogspot.com">visit my website and have fun with Mico</a>, <a href="https://www.youtube.com/@Icepenguins101">check out my YouTube channel</a>, or use <a href="https://github.com/Sub-Bubble/CharmsBarReloaded">Charms Bar Reloaded</a>, which is more up to date than this program (all because of one dumbass decision to leave my computer close to the end of the bed side) until I receive my PC back. Please stay up to date on my <a href="https://www.facebook.com/jayden.montoya">Facebook</a> or <a href="https://www.instagram.com/jaydenwmontoya/">Instagram</a> for the latest updates on when Charms Bar Port will resume. I will not be providing updates on Twitter, as I absolutely <b>HATE</b> that website with a burning passion and want them to be sued for discrimination. I'm only hoping that the computer repair fees wouldn't be too expensive.
 
-For now, I am stuck with a Mac and in the meantime, please check out <a href="https://github.com/Icepenguins101/australis-theme-port">Australis Theme Port</a> for Mozilla Firefox instead of this project. Australis Theme Port is a holdover until I receive my PC back. Please stay up to date on my <a href="https://www.facebook.com/jayden.montoya">Facebook</a> or <a href="https://www.instagram.com/jaydenwmontoya/">Instagram</a> for the latest updates on when Charms Bar Port will resume. 
+When the project returns, the requested features and code completely taken from Charms Bar Reloaded will be inserted, which will be quite the massive update. I don't know when this project will be back, but I only hope it will be sometime in 2025 as this project has been in hiatus for nearly two years now.
 
-
-Please hope that the computer repair fees wouldn't be too large, otherwise I may have to sue Jack Dorsey for discrimination.
-
-Thank you for your patience. May Windows 8.1 live in your hearts and memory.
+Thank you for your patience. May Windows 8 and Windows 8.1 live in your hearts and memory.
 
 <hr />
 <p align="center">
@@ -37,15 +35,15 @@ Thank you for your patience. May Windows 8.1 live in your hearts and memory.
 - [Support](#support)
   
 ## About
-<b>Charms Bar Port</b> will help you bring back the Windows 8.x Charms Bar to Windows 10 and Windows 11, using real files from Windows 8.x to enhance your Windows environment and relive the Windows 8.x days. As the name suggests, it's a 1/1 conversion of the infamous Charms Bar with new features and hotfixes from the original.
+<b>Charms Bar Port</b> will help you bring back the Windows 8.x Charms Bar to Windows 10 and Windows 11, using real files from Windows 8.x to enhance your Windows environment and relive the Windows 8.x days. As the name suggests, it's a 1:1 conversion of the infamous Charms Bar with new features and hotfixes from the original.
 
 Forked and completely edited from <a href="https://github.com/Jerhynh/CharmsBarRevived">CharmsBarRevived</a>, <b>Charms Bar Port</b> will assist on helping any Charms Bar fan make the jump from Windows 8.1 to Windows 10 or Windows 11, without having to stay on the obsolete operating system forever...
 
 ## Why was this created?
-As you may already know, Microsoft made the annoucement to completely kill off the Charms Bar in Windows 10 in December 17, 2014. There used to be vague ways to restore it in the old days using ValiiNet Charms, PopCharms, RocketDock, etc.
+As you may already know, Microsoft made the annoucement to completely kill off the Charms Bar in Windows 10 in December 17, 2014. There used to be ways to restore it in the old days using ValiiNet Charms, PopCharms, RocketDock, etc.
 
 
-ValiNet Charms as of 2023 is no longer available to download, PopCharms was only meant to be used between Windows 10 build 9780 and Windows 10 build 9913, and RocketDock is <b>very</b> outdated, so I created this project primarily to bring my needs of a Charms Bar back.
+ValiNet Charms as of 2025 is no longer available to download, PopCharms was only meant to be used between Windows 10 build 9780 and Windows 10 build 9913, and RocketDock is <b>very</b> outdated, so I created this project primarily to bring my needs of a Charms Bar back.
 
 ## How does it work?
 On touch screens, swipe from the right edge towards to bring up the Charms Bar. If you're a mouse user, swipe to the top right corner and drag your cursor down to open the Charms Bar. You can also use the keyboard shortcut Windows key + C, just like it was on Windows 8.x. Included in the Charms Bar are:
