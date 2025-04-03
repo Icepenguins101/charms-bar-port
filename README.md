@@ -1,11 +1,7 @@
 ⚠️ <b>IMPORTANT NOTICE !!</b><br />
-After a physical computer damage accident happened in May 2023 worsening all the way to November 2023 to where the power button quit working and the screen hinge got disconnected, Charms Bar Port development sadly was forced to be halted from that point forward.
+The machine that was used to make this project has been finally fixed up and development should hopefully resume sometime in April 2025. The requested features and code completely taken from Charms Bar Reloaded will be inserted soon, which will be quite the massive update.
 
-For now, I am stuck with a Mac, and I cannot provide any upgrades aside from requests of the current build of Charms Bar Port. In the meantime, please check out <a href="https://github.com/Icepenguins101/australis-theme-port">Australis Theme Port for Mozilla Firefox</a>, <a href="https://bloodstreamscorporation.blogspot.com">visit my website and have fun with Mico</a>, <a href="https://www.youtube.com/@Icepenguins101">check out my YouTube channel</a>, or use <a href="https://github.com/Sub-Bubble/CharmsBarReloaded">Charms Bar Reloaded</a>, which is more up to date than this program (all because of one dumbass decision to leave my computer close to the end of the bed side) until I receive my PC back. Please stay up to date on my <a href="https://www.facebook.com/jayden.montoya">Facebook</a> or <a href="https://www.instagram.com/jaydenwmontoya/">Instagram</a> for the latest updates on when Charms Bar Port will resume. I will not be providing updates on Twitter, as I absolutely <b>HATE</b> that website with a burning passion and want them to be sued for discrimination. I'm only hoping that the computer repair fees wouldn't be too expensive.
-
-When the project returns, the requested features and code completely taken from Charms Bar Reloaded will be inserted, which will be quite the massive update. I don't know when this project will be back, but I only hope it will be sometime in 2025 as this project has been in hiatus for nearly two years now.
-
-Thank you for your patience. May Windows 8 and Windows 8.1 live in your hearts and memory.
+Thank you for your extended patience. May Windows 8 and Windows 8.1 live in your hearts and memory.
 
 <hr />
 <p align="center">
