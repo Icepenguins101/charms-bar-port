@@ -1,5 +1,5 @@
 ⚠️ <b>IMPORTANT NOTICE !!</b><br />
-The machine that was used to make this project has been finally fixed up and development should hopefully resume sometime in April 2025. The requested features and code completely taken from Charms Bar Reloaded will be inserted soon, which will be quite the massive update.
+The machine that was used to make this project has been fixed up around April 2025 and development should hopefully resume sometime in May 2025 when the machine is paid and sent back. The requested features and code taken from Charms Bar Reloaded will be inserted soon.
 
 Thank you for your extended patience. May Windows 8 and Windows 8.1 live in your hearts and memory.
 
@@ -78,6 +78,7 @@ On touch screens, swipe from the right edge towards to bring up the Charms Bar. 
 * Japanese (日本語) (will be added in the next major update)
 * Russian (русский) (will be added in the next major update)
 * Portuguese (Português) (will be added in the next major update)
+* Italian (Italiano) (will be added in the next major update)
 
 ## Screenshots
 <img src="resource/preview.png"/>
