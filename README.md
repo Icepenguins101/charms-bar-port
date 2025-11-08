@@ -1,9 +1,9 @@
-⚠️ <b>IMPORTANT NOTICE !!</b><br />
-The machine that was used to make this project has been fixed up around April 2025 and development should hopefully resume around late November 2025. <!--sometime later this year (the shop is asking for a $200 price range) when the machine is paid and sent back.--> The requested features and code taken from Charms Bar Reloaded will be inserted soon.
+<!--⚠️ <b>IMPORTANT NOTICE !!</b><br />
+The machine that was used to make this project has been fixed up around April 2025 and development should hopefully resume around late November 2025. The requested features and code taken from Charms Bar Reloaded will be inserted soon.
 
 Thank you for your extended patience. May Windows 8 and Windows 8.1 live in your hearts and memory.
 
-<hr />
+<hr />-->
 <p align="center">
 <img id="charmsbarPort" src="resource/logo.png"/>
 </p>
